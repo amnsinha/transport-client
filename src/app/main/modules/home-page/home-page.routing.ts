@@ -7,7 +7,15 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const homeroutes: Routes = [
   {
-    path: "",
+    path: "start",
+    component: DashboardComponent
+  },
+  {
+    path: "manage-truck",
+    component: DashboardComponent
+  },
+  {
+    path: "add-client",
     component: DashboardComponent
   }
 ];

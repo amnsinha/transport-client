@@ -57,12 +57,12 @@ export class LoginComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home/start']);
       return;
     }
 
     this.loading = true;
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home/start']);
     // this.authenticationService.login(this.loginForm.value.username, btoa(this.loginForm.value.password))
     //   .subscribe(
     //     data => {
