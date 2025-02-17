@@ -11,6 +11,10 @@ import {Order} from "../../../../models/Order";
 export class DashboardComponent implements OnInit {
 
   orderForm: FormGroup;
+  originOptions: string[] = ['Origin 1', 'Origin 2', 'Origin 3']; // Replace with your options
+  destinationOptions: string[] = ['Destination 1', 'Destination 2', 'Destination 3']; // Replace with your options
+  statusOptions: string[] = ['Pending', 'Completed', 'In Progress']; // Replace with your options
+  approvedByOptions: string[] = ['Admin', 'Manager', 'Supervisor']; // Replace with your options
 
   constructor(private fb: FormBuilder,
               private orderService: OrderService) {

@@ -1,0 +1,98 @@
+<div class="truck-details-container">
+  <!-- Tab Section -->
+  <div class="tabs">
+    <button [class.active]="currentTab === 'add'" (click)="switchTab('add')">Add Truck</button>
+    <button [class.active]="currentTab === 'all'" (click)="switchTab('all')">All Trucks</button>
+  </div>
+
+  <!-- Add Truck Form Section -->
+  <div *ngIf="currentTab === 'add'" class="add-truck-form">
+    <form (ngSubmit)="addTruck()">
+      <div class="form-group">
+        <label for="truckNumber">Truck Number:</label>
+        <input id="truckNumber" [(ngModel)]="newTruck.truckNumber" name="truckNumber" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="registrationNumber">Registration Number:</label>
+        <input id="registrationNumber" [(ngModel)]="newTruck.registrationNumber" name="registrationNumber" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input id="model" [(ngModel)]="newTruck.model" name="model" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="capacity">Capacity:</label>
+        <input id="capacity" [(ngModel)]="newTruck.capacity" name="capacity" type="number" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="fuelType">Fuel Type:</label>
+        <input id="fuelType" [(ngModel)]="newTruck.fuelType" name="fuelType" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <input id="status" [(ngModel)]="newTruck.status" name="status" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="ownerName">Owner Name:</label>
+        <input id="ownerName" [(ngModel)]="newTruck.ownerName" name="ownerName" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="driverName">Driver Name:</label>
+        <input id="driverName" [(ngModel)]="newTruck.driverName" name="driverName" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="driverNumber">Driver Contact No.:</label>
+        <input id="driverNumber" [(ngModel)]="newTruck.driverNumber" name="driverNumber" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="freight">Freight:</label>
+        <input id="freight" [(ngModel)]="newTruck.fright" name="freight" required class="input-field" />
+      </div>
+
+      <button type="submit" class="submit-button">Add Truck</button>
+    </form>
+  </div>
+
+  <!-- All Trucks Table Section -->
+  <div *ngIf="currentTab === 'all'" class="all-trucks-table">
+    <table class="truck-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Truck Number</th>
+          <th>Registration No.</th>
+          <th>Model</th>
+          <th>Capacity</th>
+          <th>Fuel Type</th>
+          <th>Status</th>
+          <th>Owner Name</th>
+          <th>Driver Name</th>
+          <th>Freight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let truck of allTrucks">
+          <td>{{ truck.id }}</td>
+          <td>{{ truck.truckNumber }}</td>
+          <td>{{ truck.registrationNumber }}</td>
+          <td>{{ truck.model }}</td>
+          <td>{{ truck.capacity }}</td>
+          <td>{{ truck.fuelType }}</td>
+          <td>{{ truck.status }}</td>
+          <td>{{ truck.ownerName }}</td>
+          <td>{{ truck.driverName }}</td>
+          <td>{{ truck.fright }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

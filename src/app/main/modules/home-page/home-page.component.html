@@ -1,26 +1,45 @@
 <div id="s">
   <app-header></app-header>
 </div>
+
 <div class="container-fluid">
   <div class="row flex-nowrap">
+    <!-- Sidebar -->
     <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 sidebar-color">
       <div class="d-flex flex-column align-items-center align-items-sm-start pt-3 text-white min-vh-100">
-
+        
+        <!-- Navigation Menu -->
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
           <li class="nav-item">
-            <a class="nav-link align-middle px-0">
-              <i class="fa fa-home fa-2x"></i> <span class="ms-1 d-none d-sm-inline">Add User</span>
+            <a class="nav-link align-middle px-0" routerLink="/home/start">
+              <i class="fa fa-user fa-2x"></i> <span class="ms-1 d-none d-sm-inline">Add Order</span>
             </a>
           </li>
-
-
+          <li class="nav-item">
+            <a class="nav-link align-middle px-0" routerLink="/home/add-truck">
+              <i class="fa fa-user fa-2x"></i> <span class="ms-1 d-none d-sm-inline">Add Truck</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link align-middle px-0" routerLink="/home/manage-truck">
+              <i class="fa fa-cogs fa-2x"></i> <span class="ms-1 d-none d-sm-inline">Manage Orders</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link align-middle px-0" routerLink="/home/add-client">
+              <i class="fa fa-cogs fa-2x"></i> <span class="ms-1 d-none d-sm-inline">Add Client</span>
+            </a>
+          </li>
         </ul>
+
         <hr>
+
+        <!-- User Profile Dropdown -->
         <div class="dropdown pb-4">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
              id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-            <span class="d-none d-sm-inline mx-1">loser</span>
+            <span class="d-none d-sm-inline mx-1">User</span>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -34,6 +53,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Main Content -->
     <div class="col" style="margin: 2%">
       <router-outlet></router-outlet>
     </div>

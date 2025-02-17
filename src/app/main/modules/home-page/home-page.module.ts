@@ -13,11 +13,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TabViewModule} from 'primeng/tabview';
 import {InputTextModule} from 'primeng/inputtext';
 import {HttpClientModule} from '@angular/common/http';
+import { AddClientComponent } from "./add-client/addClient.component";
+import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
+import { AddTruckComponent } from "./add-truck/addTruck.component";
 
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
-    , DashboardComponent],
+    , DashboardComponent,AddClientComponent,OrderDetailsComponent,AddTruckComponent],
   exports: [
     HeaderComponent
   ],
