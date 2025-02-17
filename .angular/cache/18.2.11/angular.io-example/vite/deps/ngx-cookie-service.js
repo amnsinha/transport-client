@@ -1,7 +1,7 @@
 import {
   DOCUMENT,
   isPlatformBrowser
-} from "./chunk-DRPHOS6L.js";
+} from "./chunk-5WYSIKEV.js";
 import {
   Inject,
   Injectable,
@@ -9,11 +9,11 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-FLPUOALS.js";
-import "./chunk-MRD3AVRT.js";
+} from "./chunk-3R7OMVPR.js";
+import "./chunk-55JKKNGN.js";
 import "./chunk-4MWRP73S.js";
 
-// ../../node_modules/ngx-cookie-service/fesm2022/ngx-cookie-service.mjs
+// node_modules/ngx-cookie-service/fesm2022/ngx-cookie-service.mjs
 var CookieService = class _CookieService {
   constructor(document, platformId) {
     this.document = document;

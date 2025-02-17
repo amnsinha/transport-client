@@ -4,8 +4,6 @@ import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule, Routes} from "@angular/router";
 import {LandingComponent} from "./main/modules/landing/landing.component";
 import {HomePageComponent} from "./main/modules/home-page/home-page.component";
-import {TournamentBrowseComponent} from "./main/modules/tournament-browse/tournament-browse.component";
-import {TournamentPublicInfoComponent} from "./main/modules/tournament-public-info/tournament-public-info.component";
 
 const routes: Routes = [
   {
@@ -25,21 +23,7 @@ const routes: Routes = [
           module => module.HomePageModule
         )
       }
-      ,
-      {
-        path: "browse",
-        component: TournamentBrowseComponent,
-        loadChildren: () => import(`./main/modules/tournament-browse/tournament-browse.module`).then(
-          module => module.TournamentBrowseModule
-        )
-      },
-      {
-        path: "view-tournament",
-        component: TournamentPublicInfoComponent,
-        loadChildren: () => import(`./main/modules/tournament-public-info/tournament-public-info.module`).then(
-          module => module.TournamentPublicInfoModule
-        )
-      }
+
     ]
   }
 ];

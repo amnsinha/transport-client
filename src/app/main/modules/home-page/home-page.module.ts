@@ -9,7 +9,6 @@ import {CalendarModule} from "primeng/calendar";
 import {DropdownModule} from "primeng/dropdown";
 import {FileUploadModule} from "primeng/fileupload";
 import {EditorModule} from "primeng/editor";
-import { CreateOrganizationComponent } from './create-organization/create-organization.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TabViewModule} from 'primeng/tabview';
 import {InputTextModule} from 'primeng/inputtext';
@@ -18,7 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
-    , DashboardComponent, CreateOrganizationComponent],
+    , DashboardComponent],
   exports: [
     HeaderComponent
   ],

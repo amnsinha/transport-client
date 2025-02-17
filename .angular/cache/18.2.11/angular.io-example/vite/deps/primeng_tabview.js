@@ -1,19 +1,24 @@
 import {
   ChevronLeftIcon,
   ChevronRightIcon
-} from "./chunk-RQOW6NHB.js";
+} from "./chunk-KWLT3WFR.js";
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-N7PVNNLS.js";
+} from "./chunk-VKDM2LVG.js";
 import {
   Ripple,
   RippleModule,
   TimesIcon
-} from "./chunk-DCD2IIKE.js";
+} from "./chunk-GFDAV4W5.js";
 import {
   DomHandler
-} from "./chunk-Z4X2KHRT.js";
+} from "./chunk-BUGEQH7Q.js";
+import {
+  PrimeTemplate,
+  SharedModule,
+  UniqueComponentId
+} from "./chunk-COF5AZPK.js";
 import {
   CommonModule,
   NgClass,
@@ -22,12 +27,7 @@ import {
   NgStyle,
   NgTemplateOutlet,
   isPlatformBrowser
-} from "./chunk-DRPHOS6L.js";
-import {
-  PrimeTemplate,
-  SharedModule,
-  UniqueComponentId
-} from "./chunk-JFD3YMAW.js";
+} from "./chunk-5WYSIKEV.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -79,11 +79,11 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵviewQuery
-} from "./chunk-FLPUOALS.js";
-import "./chunk-MRD3AVRT.js";
+} from "./chunk-3R7OMVPR.js";
+import "./chunk-55JKKNGN.js";
 import "./chunk-4MWRP73S.js";
 
-// ../../node_modules/primeng/fesm2022/primeng-tabview.mjs
+// node_modules/primeng/fesm2022/primeng-tabview.mjs
 var _c0 = ["*"];
 function TabPanel_div_0_ng_container_2_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
