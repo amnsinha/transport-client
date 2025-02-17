@@ -1,11 +1,361 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffa58b95-c3bb-4d3e-86ac-8cd31db24ea5" name="Default Changelist" comment="" />
+    <list default="true" id="ffa58b95-c3bb-4d3e-86ac-8cd31db24ea5" name="Default Changelist" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/.tsbuildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/angular-compiler.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/angular-compiler.db-lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_common.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_common_http.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_common_http.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_core.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_forms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_forms.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_platform-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_platform-browser.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_platform-browser_animations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_platform-browser_animations.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@angular_router.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@ngx-translate_core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@ngx-translate_core.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@ngx-translate_http-loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/@ngx-translate_http-loader.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/_metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-2GSK4JIA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-2GSK4JIA.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-3R7OMVPR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-3R7OMVPR.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-4MWRP73S.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-4MWRP73S.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-4U3RCXB5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-4U3RCXB5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-55JKKNGN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-55JKKNGN.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-5WYSIKEV.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-5WYSIKEV.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-ASJ3J3Q7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-ASJ3J3Q7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-B7756PYC.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-B7756PYC.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-BUGEQH7Q.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-BUGEQH7Q.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-BY4MZAYR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-BY4MZAYR.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-COF5AZPK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-COF5AZPK.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-IW4OK7BQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-IW4OK7BQ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-JJPA2CCK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-JJPA2CCK.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-KCIAOVFW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-KCIAOVFW.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-NKLXAZCX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-NKLXAZCX.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-OEDOYYKV.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-OEDOYYKV.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-PGWZ27O2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-PGWZ27O2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-UDLGOO2T.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/chunk-UDLGOO2T.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/ngx-cookie-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/ngx-cookie-service.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_api.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_calendar.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_card.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_card.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_dropdown.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_editor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_editor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_fileupload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_fileupload.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_inputtext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_inputtext.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_tabview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_tabview.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_toast.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/primeng_toast.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/quill-6JJT7MWF.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/quill-6JJT7MWF.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/rxjs_operators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.11/angular.io-example/vite/deps/rxjs_operators.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/visa-client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/i18n/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/about-pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/about-signature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/award.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/banner-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/banner-person.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/bd-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/bd-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-detail-hero.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/blog/blog-posted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/breadcrumb/classes-breadcrumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/classes/classes-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/footer-banner/footer-banner-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/footer-banner/footer-banner-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/footer-signup.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/gallery/gallery-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/gallery/gallery-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/gallery/gallery-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/gallery/gallery-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/gallery/gallery-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/gallery/gallery-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/gallery/gallery-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/hero-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/icon/icon-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/icon/icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/icon/icon-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/icon/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/register-pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/services/service-icon-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/services/service-icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/services/service-icon-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/services/service-icon-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/services/service-pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/testimonial/quote-left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/testimonial/testimonial-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/testimonial/testimonial-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/trainer/about-trainer-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/trainer/about-trainer-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/trainer/about-trainer-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/trainer/trainer-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/trainer/trainer-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/img/trainer/trainer-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/locales/en/translation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/assets/shipping.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-4ES4E5IZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-5B6UNHFC.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-64JFTIPJ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-7KY72ILQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-EWAXKVK3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-FFJZ6NQZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-GAL4ENT6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-J6E67ZUZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-JDIESVZU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-LRQOTB2J.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-M6MOPESF.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-MUUQMUCA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-N4WI444Q.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-QH7V45P4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-RA6KPE7V.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/chunk-VXFUJLVQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/main-5KGB3L2R.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/media/hero-bg-DU7YX3IZ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/media/testimonial-bg-4JSROGQC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/polyfills-FFHMD2TL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browser/styles-TJXREHS2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.routing.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/create-organization/create-organization.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/create-organization/create-organization.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/create-organization/create-organization.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/create-organization/create-organization.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/dashboard/dashboard.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/dashboard/dashboard.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/dashboard/dashboard.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/dashboard/dashboard.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/dashboard/dashboard.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/home-page.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/home-page.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/home-page.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/home-page.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/home-page.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/home-page/home-page.routing.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/contacts/contacts.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/contacts/contacts.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/contacts/contacts.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/contacts/contacts.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/firstpage/firstpage.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/firstpage/firstpage.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/firstpage/firstpage.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/firstpage/firstpage.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/forgot-password/forgot-password.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/forgot-password/forgot-password.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/forgot-password/forgot-password.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/forgot-password/forgot-password.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/landing.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/landing.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/landing.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/landing.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/landing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/landing.routing.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/login/login.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/register/register.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/register/register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/register/register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/register/register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/reset-password/reset-password.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/reset-password/reset-password.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/reset-password/reset-password.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/landing/reset-password/reset-password.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-browse/tournament-browse.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-browse/tournament-browse.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-browse/tournament-browse.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-browse/tournament-browse.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-browse/tournament-browse.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-browse/tournament-browse.routing.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-public-info.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-public-info.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-public-info.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-public-info.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-public-info.routing.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-register/tournament-register.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-register/tournament-register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-register/tournament-register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/tournament-register/tournament-register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/view-tournament/view-tournament.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/view-tournament/view-tournament.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/view-tournament/view-tournament.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/modules/tournament-public-info/view-tournament/view-tournament.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/service/organisation.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/service/tournament.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/service/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/Announcements.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/tournament.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/browse-header/browse-header.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/browse-header/browse-header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/browse-header/browse-header.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/browse-header/browse-header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/browse-header/browser-header.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/header/header.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/header/header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/header/header.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/component/header/header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/auth-guard.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/authentication.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/base-service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/login.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/toast-message.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/utils/base64-utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/i18n/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/about-pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/about-signature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/award.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/banner-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/banner-person.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/bd-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/bd-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-detail-hero.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog/blog-posted.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/breadcrumb/classes-breadcrumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/classes/classes-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/footer-banner/footer-banner-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/footer-banner/footer-banner-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/footer-signup.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/gallery/gallery-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/gallery/gallery-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/gallery/gallery-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/gallery/gallery-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/gallery/gallery-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/gallery/gallery-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/gallery/gallery-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/hero-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon/icon-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon/icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon/icon-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/register-pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/services/service-icon-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/services/service-icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/services/service-icon-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/services/service-icon-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/services/service-pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/testimonial/quote-left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/testimonial/testimonial-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/testimonial/testimonial-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/trainer/about-trainer-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/trainer/about-trainer-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/trainer/about-trainer-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/trainer/trainer-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/trainer/trainer-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/trainer/trainer-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/locales/en/translation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/shipping.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -26,9 +376,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../visa-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\VISA\visa-client\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\alokatransport\github\transport-client\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -96,10 +446,36 @@
       <workItem from="1731502481984" duration="805000" />
       <workItem from="1733049951517" duration="1192000" />
       <workItem from="1736661736892" duration="62000" />
+      <workItem from="1739769527146" duration="2178000" />
+      <workItem from="1739772208695" duration="630000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1739769772978</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739769772978</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
