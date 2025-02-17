@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-lg-12 col-md-6 col-sm-12" >
+
+      <div class="card">
+
+        <p-tabView orientation="left">
+            <p-tabPanel>
+                <ng-template pTemplate = "header">
+                    <!-- <i class="pi pi-calendar"></i> -->
+                    <span>Information</span>
+                </ng-template>
+               <div class="row">
+                 <div class="col-lg-6 col-md-6 col-sm-12" style="padding-left: 5%;">
+                    <br>
+                    <h1>Description</h1>
+                    <h6>{{this.tournamentDetails.information}}</h6>
+                    <br><br>
+                    <h1>Structure</h1>
+                    <h6>No description</h6>
+                 </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12">
+                    <br>
+                    <h1>Timezone</h1>
+                    <h6>Europe/Istanbul (UTC+03:00)</h6>
+                    <br><br>
+                    <h1>Prize</h1>
+                    <h6>{{this.tournamentDetails.prizeMoney}}</h6>
+                    <br><br>
+                    <h1>Rules</h1>
+                   <h6><div [innerHTML]="this.tournamentDetails.rules"></div></h6>
+                 </div>
+               </div>
+            </p-tabPanel>
+            <p-tabPanel header="Participants">
+                <ng-template pTemplate = "header">
+                    <!-- <i class="pi pi-user"></i> -->
+                    <span>Participants</span>
+                </ng-template>
+
+                  <input type="button" class="btn btn-outline-secondary rounded btn-lg m-4" value="BADBOY">
+                  <input type="button" class="btn btn-outline-secondary rounded btn-lg m-4" value="BADBOY">
+                  <input type="button" class="btn btn-outline-secondary rounded btn-lg m-4" value="BADBOY">
+                  <input type="button" class="btn btn-outline-secondary rounded btn-lg m-4" value="BADBOY">
+
+
+            </p-tabPanel>
+            <p-tabPanel header="Matches">
+                <ng-template pTemplate = "header">
+                    <!-- <i class="pi pi-search"></i> -->
+                    <span>Matches</span>
+
+                </ng-template>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+            </p-tabPanel>
+
+            <p-tabPanel>
+              <ng-template pTemplate = "header">
+                  <!-- <i class="pi pi-calendar"></i> -->
+                  <span>Schedule</span>
+              </ng-template>
+             <div class="row">
+               <div class="col-lg-6 col-md-6 col-sm-12" style="padding-left: 5%;">
+                  <br>
+                  <h1>Schedule</h1>
+                  <h6>No Schedule</h6>
+
+               </div>
+
+             </div>
+          </p-tabPanel>
+
+          <p-tabPanel header="Watch">
+            <ng-template pTemplate = "header">
+                <!-- <i class="pi pi-search"></i> -->
+                <span>Watch</span>
+
+            </ng-template>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+        </p-tabPanel>
+        <p-tabPanel header="Share">
+          <ng-template pTemplate = "header">
+              <!-- <i class="pi pi-search"></i> -->
+              <span>Share</span>
+
+          </ng-template>
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+              cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+              Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+      </p-tabPanel>
+        </p-tabView>
+        </div>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,8 @@
+::ng-deep .p-card .p-card-title {
+  font-size: 18px;
+}
+
+.dash-image {
+  height: 100px;
+  width: 100px;
+}

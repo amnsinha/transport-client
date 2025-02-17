@@ -1,0 +1,66 @@
+<div class="order-form">
+    <h2>Create Order</h2>
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="orderId">Order ID</label>
+            <input id="orderId" formControlName="orderId" />
+        </div>
+
+        <div>
+            <label for="clientName">Client Name</label>
+            <input id="clientName" formControlName="clientName" />
+        </div>
+
+        <div>
+            <label for="origin">Origin</label>
+            <input id="origin" formControlName="origin" />
+        </div>
+
+        <div>
+            <label for="destination">Destination</label>
+            <input id="destination" formControlName="destination" />
+        </div>
+
+        <div>
+            <label for="freightWeight">Freight Weight</label>
+            <input type="number" id="freightWeight" formControlName="freightWeight" />
+        </div>
+
+        <div>
+            <label for="assignedTruck">Assigned Truck</label>
+            <input id="assignedTruck" formControlName="assignedTruck" />
+        </div>
+
+        <div>
+            <label for="assignedDriver">Assigned Driver</label>
+            <input id="assignedDriver" formControlName="assignedDriver" />
+        </div>
+
+        <div>
+            <label for="status">Status</label>
+            <input id="status" formControlName="status" />
+        </div>
+
+        <div>
+            <label for="commissionAmount">Commission Amount</label>
+            <input id="commissionAmount" formControlName="commissionAmount" />
+        </div>
+
+        <div>
+            <label for="approvedBy">Approved By</label>
+            <input id="approvedBy" formControlName="approvedBy" />
+        </div>
+
+        <div>
+            <label for="clearance">Clearance</label>
+            <input id="clearance" formControlName="clearance" />
+        </div>
+
+        <div>
+            <label for="incharge">Incharge</label>
+            <input id="incharge" formControlName="incharge" />
+        </div>
+
+        <button type="submit" [disabled]="!orderForm.valid">Create Order</button>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+.landing-btn{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 10px;
+  color: #ffff;
+  border: 1px solid #ffff;
+  background: #ffffff12;
+  transition: 0.3s;
+}
+
+
+.hero-bg{
+background-image: url(../../../../../assets/img/hero-bg.jpg);
+}
+
+.landing-btn:hover{
+  background: rgba(255, 255, 255, 0.25);
+}
+
