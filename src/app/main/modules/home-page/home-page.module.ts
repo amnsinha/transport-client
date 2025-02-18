@@ -17,6 +17,7 @@ import { AddClientComponent } from "./add-client/addClient.component";
 import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
 import {OrderComponent} from "./order/order.component";
+import {AutoCompleteModule} from "primeng/autocomplete";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {OrderComponent} from "./order/order.component";
     ReactiveFormsModule,
     TabViewModule,
     InputTextModule,
+    AutoCompleteModule,
     ReactiveFormsModule, // Required for reactive forms
     HttpClientModule, // Required for HTTP requests
     DropdownModule, // For dropdown

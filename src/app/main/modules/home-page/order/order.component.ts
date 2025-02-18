@@ -19,11 +19,13 @@ import { Order } from "../../../../models/Order";
 })
 export class OrderComponent implements OnInit {
     orderForm!: FormGroup;
+    filteredTrucks: any[] = [];
     parties: Party[] = []; // Party list from the API
     routeLocations: RouteLocation[] = []; // Route location list from the API
     trucks: Trucks[] = []; // Trucks list for selection
     drivers: Driver[] = []; // Drivers list for selection
-    orderId: number | null = null; // To store the order ID for update or delete
+    orderId: any | null = null; // To store the order ID for update or delete
+
 
     constructor(
         private fb: FormBuilder,
@@ -36,6 +38,13 @@ export class OrderComponent implements OnInit {
         private router: Router
     ) {
         this.createForm();
+    }
+
+    filterTrucks(event:any) {
+        let query = event.query;
+        this.filteredTrucks = this.trucks.filter(truck =>
+            truck.truckNumber.toLowerCase().includes(query.toLowerCase())
+        );
     }
 
     autoGenerateOrderId() {
@@ -81,10 +90,6 @@ export class OrderComponent implements OnInit {
         // Load all necessary data for dropdowns
         this.partyService.getAllParties().subscribe(parties => {
             this.parties = parties;
-        });
-
-        this.driverService.getAllDrivers().subscribe(driverList => {
-            this.drivers = driverList;
         });
 
         this.trucksService.getAllTrucks().subscribe(trucks => {

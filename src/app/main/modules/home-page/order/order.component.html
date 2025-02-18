@@ -27,8 +27,14 @@
 
         <div class="form-group">
           <label for="assignedTruck">Assigned Truck</label>
-          <p-dropdown [options]="trucks" formControlName="assignedTruck" optionLabel="truckNumber" placeholder="Select a truck" class="form-control"></p-dropdown>
+          <p-autocomplete
+                          (completeMethod)="filterTrucks($event)"
+                          formControlName="assignedTruck"
+                          optionLabel="truckNumber"
+                          placeholder="Search for a truck"
+                          class="form-control"></p-autocomplete>
         </div>
+
       </div>
 
       <!-- Second Column (Right Side) -->
