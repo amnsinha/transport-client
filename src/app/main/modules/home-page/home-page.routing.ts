@@ -5,12 +5,14 @@ import {RouterModule, Routes} from "@angular/router";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import { AddClientComponent } from "./add-client/addClient.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
+import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
+import { OrderManagementComponent } from "./order-details/addOrder.component";
 // import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 
 const homeroutes: Routes = [
   {
     path: "start",
-    component: DashboardComponent
+    component: OrderManagementComponent
   },
   {
     path: "manage-truck",

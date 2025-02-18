@@ -1,116 +1,134 @@
-<div class="order-management-container">
-  <!-- Tabs -->
-  <div class="tabs">
-    <button [class.active]="currentTab === 'add'" (click)="switchTab('add')">Create Order</button>
-    <button [class.active]="currentTab === 'view'" (click)="switchTab('view')">View Orders</button>
-  </div>
+<div class="order-details-container">
+  <!-- Card for Tabs and Form -->
+  <div class="card add-order-form">
+    <!-- Tab Section -->
+    <div class="tabs">
+      <button [class.active]="currentTab === 'add'" (click)="switchTab('add')">Add Order</button>
+      <button [class.active]="currentTab === 'all'" (click)="switchTab('all')">All Orders</button>
+    </div>
 
-  <!-- Create Order Form -->
-  <div *ngIf="currentTab === 'add'" class="order-form">
-    <form (ngSubmit)="addOrder()">
-      <div class="form-group">
-        <label for="orderId">Order ID:</label>
-        <input id="orderId" [(ngModel)]="newOrder.orderId" name="orderId" required />
-      </div>
+    <!-- Add Order Form Section -->
+    <div *ngIf="currentTab === 'add'" class="form-section">
+      <form (ngSubmit)="addOrder()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientName">Client Name:</label>
+            <select id="clientName" [(ngModel)]="newOrder.clientName" name="clientName" required class="input-field">
+              <option *ngFor="let client of clients" [value]="client.name">{{ client.name }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="origin">Origin:</label>
+            <select id="origin" [(ngModel)]="newOrder.origin" name="origin" required class="input-field">
+              <option value="" disabled selected>Select Origin</option> <!-- Option to prompt user -->
+              <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+            </select>
+          </div>
+        
+          <div class="form-group">
+            <label for="destination">Destination:</label>
+            <select id="destination" [(ngModel)]="newOrder.destination" name="destination" required class="input-field">
+              <option value="" disabled selected>Select Destination</option> <!-- Option to prompt user -->
+              <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+            </select>
+          </div>
+        </div>
+        
 
-      <div class="form-group">
-        <label for="clientName">Client Name:</label>
-        <input id="clientName" [(ngModel)]="newOrder.clientName" name="clientName" required />
-      </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="freightWeight">Freight Weight:</label>
+            <input type="number" id="freightWeight" [(ngModel)]="newOrder.freightWeight" name="freightWeight" required class="input-field" />
+          </div>
 
-      <div class="form-group">
-        <label for="origin">Origin:</label>
-        <input id="origin" [(ngModel)]="newOrder.origin" name="origin" required />
-      </div>
+          <div class="form-group">
+            <label for="assignedTruck">Assigned Truck:</label>
+            <select id="assignedTruck" [(ngModel)]="newOrder.assignedTruck" name="assignedTruck" required class="input-field">
+              <option value="" disabled selected>Select Assigned Truck</option> <!-- Option to prompt user -->
+              <option *ngFor="let truck of trucks" [value]="truck">{{ truck }}</option>
+            </select>
+          </div>
+          
+        </div>
 
-      <div class="form-group">
-        <label for="destination">Destination:</label>
-        <input id="destination" [(ngModel)]="newOrder.destination" name="destination" required />
-      </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="assignedDriver">Assigned Driver:</label>
+            <input id="assignedDriver" [(ngModel)]="newOrder.assignedDriver" name="assignedDriver" required class="input-field" />
+          </div>
 
-      <div class="form-group">
-        <label for="freightWeight">Freight Weight (kg):</label>
-        <input id="freightWeight" type="number" [(ngModel)]="newOrder.freightWeight" name="freightWeight" required />
-      </div>
+          <div class="form-group">
+            <label for="status">Status:</label>
+            <input id="status" [(ngModel)]="newOrder.status" name="status" required class="input-field" />
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="assignedTruck">Assigned Truck:</label>
-        <input id="assignedTruck" [(ngModel)]="newOrder.assignedTruck" name="assignedTruck" required />
-      </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="commissionAmount">Commission Amount:</label>
+            <input id="commissionAmount" [(ngModel)]="newOrder.commissionAmount" name="commissionAmount" required class="input-field" />
+          </div>
 
-      <div class="form-group">
-        <label for="assignedDriver">Assigned Driver:</label>
-        <input id="assignedDriver" [(ngModel)]="newOrder.assignedDriver" name="assignedDriver" required />
-      </div>
+          <div class="form-group">
+            <label for="approvedBy">Approved By:</label>
+            <input id="approvedBy" [(ngModel)]="newOrder.approvedBy" name="approvedBy" required class="input-field" />
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="status">Status:</label>
-        <select id="status" [(ngModel)]="newOrder.status" name="status">
-          <option value="Pending">Pending</option>
-          <option value="In Progress">In Progress</option>
-          <option value="Completed">Completed</option>
-        </select>
-      </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clearance">Clearance:</label>
+            <input id="clearance" [(ngModel)]="newOrder.clearance" name="clearance" required class="input-field" />
+          </div>
 
-      <div class="form-group">
-        <label for="commissionAmount">Commission Amount:</label>
-        <input id="commissionAmount" [(ngModel)]="newOrder.commissionAmount" name="commissionAmount" required />
-      </div>
+          <div class="form-group">
+            <label for="incharge">Incharge:</label>
+            <input id="incharge" [(ngModel)]="newOrder.incharge" name="incharge" required class="input-field" />
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="approvedBy">Approved By:</label>
-        <input id="approvedBy" [(ngModel)]="newOrder.approvedBy" name="approvedBy" required />
-      </div>
+        <button type="submit" class="submit-button">Add Order</button>
+      </form>
+    </div>
 
-      <div class="form-group">
-        <label for="clearance">Clearance:</label>
-        <input id="clearance" [(ngModel)]="newOrder.clearance" name="clearance" required />
-      </div>
-
-      <div class="form-group">
-        <label for="incharge">Incharge:</label>
-        <input id="incharge" [(ngModel)]="newOrder.incharge" name="incharge" required />
-      </div>
-
-      <button type="submit" class="submit-button">Add Order</button>
-    </form>
-  </div>
-
-  <!-- View Orders Table -->
-  <div *ngIf="currentTab === 'view'" class="order-table-container">
-    <table class="order-table">
-      <thead>
-        <tr>
-          <th>Order ID</th>
-          <th>Client Name</th>
-          <th>Origin</th>
-          <th>Destination</th>
-          <th>Freight Weight</th>
-          <th>Assigned Truck</th>
-          <th>Assigned Driver</th>
-          <th>Status</th>
-          <th>Commission</th>
-          <th>Approved By</th>
-          <th>Clearance</th>
-          <th>Incharge</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let order of allOrders">
-          <td>{{ order.orderId }}</td>
-          <td>{{ order.clientName }}</td>
-          <td>{{ order.origin }}</td>
-          <td>{{ order.destination }}</td>
-          <td>{{ order.freightWeight }}</td>
-          <td>{{ order.assignedTruck }}</td>
-          <td>{{ order.assignedDriver }}</td>
-          <td>{{ order.status }}</td>
-          <td>{{ order.commissionAmount }}</td>
-          <td>{{ order.approvedBy }}</td>
-          <td>{{ order.clearance }}</td>
-          <td>{{ order.incharge }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Orders Table Section -->
+    <div *ngIf="currentTab === 'all'">
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Client Name</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Freight Weight</th>
+            <th>Assigned Truck</th>
+            <th>Assigned Driver</th>
+            <th>Status</th>
+            <th>Commission Amount</th>
+            <th>Approved By</th>
+            <th>Clearance</th>
+            <th>Incharge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of allOrders">
+            <td>{{ order.orderId }}</td>
+            <td>{{ order.clientName }}</td>
+            <td>{{ order.origin }}</td>
+            <td>{{ order.destination }}</td>
+            <td>{{ order.freightWeight }}</td>
+            <td>{{ order.assignedTruck }}</td>
+            <td>{{ order.assignedDriver }}</td>
+            <td>{{ order.status }}</td>
+            <td>{{ order.commissionAmount }}</td>
+            <td>{{ order.approvedBy }}</td>
+            <td>{{ order.clearance }}</td>
+            <td>{{ order.incharge }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

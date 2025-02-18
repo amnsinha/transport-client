@@ -24,6 +24,7 @@ import {
   Output,
   PLATFORM_ID,
   QueryList,
+  VERSION,
   Version,
   ViewChild,
   ViewEncapsulation$1,
@@ -318,6 +319,17 @@ function _isTestEnvironment() {
     typeof jest !== "undefined" && !!jest || // @ts-ignore
     typeof Mocha !== "undefined" && !!Mocha
   );
+}
+function _bindEventWithOptions(renderer, target, eventName, callback, options) {
+  const major = parseInt(VERSION.major);
+  const minor = parseInt(VERSION.minor);
+  if (major > 19 || major === 19 && minor > 0 || major === 0 && minor === 0) {
+    return renderer.listen(target, eventName, callback, options);
+  }
+  target.addEventListener(eventName, callback, options);
+  return () => {
+    target.removeEventListener(eventName, callback, options);
+  };
 }
 
 // node_modules/@angular/cdk/fesm2022/private.mjs
@@ -702,14 +714,6 @@ var ObserversModule = class _ObserversModule {
   }], null, null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/coercion/private.mjs
-function coerceObservable(data) {
-  if (!isObservable(data)) {
-    return of(data);
-  }
-  return data;
-}
-
 // node_modules/@angular/cdk/fesm2022/layout.mjs
 var LayoutModule = class _LayoutModule {
   static ɵfac = function LayoutModule_Factory(__ngFactoryType__) {
@@ -895,6 +899,30 @@ var BreakpointObserver = class _BreakpointObserver {
 })();
 function splitQueries(queries) {
   return queries.map((query) => query.split(",")).reduce((a1, a2) => a1.concat(a2)).map((query) => query.trim());
+}
+var Breakpoints = {
+  XSmall: "(max-width: 599.98px)",
+  Small: "(min-width: 600px) and (max-width: 959.98px)",
+  Medium: "(min-width: 960px) and (max-width: 1279.98px)",
+  Large: "(min-width: 1280px) and (max-width: 1919.98px)",
+  XLarge: "(min-width: 1920px)",
+  Handset: "(max-width: 599.98px) and (orientation: portrait), (max-width: 959.98px) and (orientation: landscape)",
+  Tablet: "(min-width: 600px) and (max-width: 839.98px) and (orientation: portrait), (min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape)",
+  Web: "(min-width: 840px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape)",
+  HandsetPortrait: "(max-width: 599.98px) and (orientation: portrait)",
+  TabletPortrait: "(min-width: 600px) and (max-width: 839.98px) and (orientation: portrait)",
+  WebPortrait: "(min-width: 840px) and (orientation: portrait)",
+  HandsetLandscape: "(max-width: 959.98px) and (orientation: landscape)",
+  TabletLandscape: "(min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape)",
+  WebLandscape: "(min-width: 1280px) and (orientation: landscape)"
+};
+
+// node_modules/@angular/cdk/fesm2022/coercion/private.mjs
+function coerceObservable(data) {
+  if (!isObservable(data)) {
+    return of(data);
+  }
+  return data;
 }
 
 // node_modules/@angular/cdk/fesm2022/a11y.mjs
@@ -1510,6 +1538,23 @@ var ActiveDescendantKeyManager = class extends ListKeyManager {
     super.setActiveItem(index);
     if (this.activeItem) {
       this.activeItem.setActiveStyles();
+    }
+  }
+};
+var FocusKeyManager = class extends ListKeyManager {
+  _origin = "program";
+  /**
+   * Sets the focus origin that will be passed in to the items for any subsequent `focus` calls.
+   * @param origin Focus origin to be used when focusing items.
+   */
+  setFocusOrigin(origin) {
+    this._origin = origin;
+    return this;
+  }
+  setActiveItem(item) {
+    super.setActiveItem(item);
+    if (this.activeItem) {
+      this.activeItem.focus(this._origin);
     }
   }
 };
@@ -5647,7 +5692,9 @@ export {
   getRtlScrollAxisType,
   _getEventTarget,
   _isTestEnvironment,
+  _bindEventWithOptions,
   _CdkPrivateStyleLoader,
+  TAB,
   ENTER,
   ESCAPE,
   SPACE,
@@ -5659,15 +5706,21 @@ export {
   hasModifierKey,
   coerceBooleanProperty,
   coerceNumberProperty,
+  _isNumberValue,
   coerceArray,
   coerceCssPixelValue,
   coerceElement,
+  CdkObserveContent,
   ObserversModule,
+  BreakpointObserver,
+  Breakpoints,
   addAriaReferencedId,
   removeAriaReferencedId,
   ActiveDescendantKeyManager,
+  FocusKeyManager,
   LiveAnnouncer,
   FocusMonitor,
+  CdkMonitorFocus,
   _IdGenerator,
   Directionality,
   BidiModule,
@@ -5675,14 +5728,17 @@ export {
   _ErrorStateTracker,
   ErrorStateMatcher,
   _StructuralStylesLoader,
+  MAT_RIPPLE_GLOBAL_OPTIONS,
+  MatRipple,
   MatRippleModule,
   MAT_OPTION_PARENT_COMPONENT,
   MAT_OPTGROUP,
   MatOptgroup,
+  MatOptionSelectionChange,
   MatOption,
   _countGroupLabelsBeforeOption,
   _getOptionScrollPosition,
   MatOptionModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-G7TESS3W.js.map
+//# sourceMappingURL=chunk-3PNIUSYJ.js.map

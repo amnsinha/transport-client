@@ -16,11 +16,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddClientComponent } from "./add-client/addClient.component";
 import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
+import { OrderManagementComponent } from "./order-details/addOrder.component";
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
-    , DashboardComponent,AddClientComponent,OrderDetailsComponent,AddTruckComponent],
+    , DashboardComponent,AddClientComponent,OrderDetailsComponent,AddTruckComponent,OrderManagementComponent],
   exports: [
     HeaderComponent
   ],
@@ -35,7 +41,12 @@ import { AddTruckComponent } from "./add-truck/addTruck.component";
     CardModule,
     ReactiveFormsModule,
     TabViewModule,
-    InputTextModule
+    InputTextModule,
+     MatButtonModule,
+        MatInputModule,
+        MatTableModule,
+        MatFormFieldModule,
+        MatTabsModule,
   ]
 })
 export class HomePageModule {

@@ -31,7 +31,7 @@ import {
   style,
   transition,
   trigger
-} from "./chunk-UGTAQPNO.js";
+} from "./chunk-2QOQGZRF.js";
 import {
   CommonModule,
   DOCUMENT,
