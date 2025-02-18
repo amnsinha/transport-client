@@ -1,84 +1,85 @@
-<div class="container mt-4">
+<div class="">
   <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
-    <div class="row">
-      <!-- First Column (Left Side) -->
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="orderId">Order ID</label>
-          <input type="number" id="orderId" formControlName="orderId" class="form-control" [ngClass]="{'is-invalid': orderForm.controls['orderId'].invalid}" />
-          <div *ngIf="orderForm.controls['orderId'].invalid" class="invalid-feedback">Order ID is required.</div>
-        </div>
+    <table class="table table-bordered">
+      <thead>
+      <tr style="font-size: 11px">
 
-        <div class="form-group">
-          <label for="party">Party</label>
-          <p-dropdown [options]="parties" formControlName="party" optionLabel="partyName" placeholder="Select a party" class="form-control"></p-dropdown>
-        </div>
+        <th>Party</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Freight Weight</th>
+        <th>Assigned Truck</th>
+        <th>Assigned Driver</th>
+        <th>Status</th>
+        <th>Commission Amount</th>
+        <th>Approved By</th>
+        <th>Clearance</th>
+        <th>Incharge</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <p-dropdown [options]="parties" formControlName="party" optionLabel="partyName"
+                      placeholder="Select a party" class="form-control"></p-dropdown>
+        </td>
 
-        <div class="form-group">
-          <label for="origin">Origin</label>
-          <p-dropdown [options]="routeLocations" formControlName="origin" optionLabel="locationName" placeholder="Select origin" class="form-control"></p-dropdown>
-        </div>
+        <td>
+          <p-dropdown [options]="routeLocations" formControlName="origin" optionLabel="locationName"
+                      placeholder="Select origin" class="form-control"></p-dropdown>
+        </td>
 
-        <div class="form-group">
-          <label for="freightWeight">Freight Weight</label>
-          <input type="number" id="freightWeight" formControlName="freightWeight" class="form-control" [ngClass]="{'is-invalid': orderForm.controls['freightWeight'].invalid}" />
-          <div *ngIf="orderForm.controls['freightWeight'].invalid" class="invalid-feedback">Freight weight is required and must be positive.</div>
-        </div>
+        <td>
+          <p-dropdown [options]="routeLocations" formControlName="destination" optionLabel="locationName"
+                      placeholder="Select destination" class="form-control"></p-dropdown>
+        </td>
 
-        <div class="form-group">
-          <label for="assignedTruck">Assigned Truck</label>
-          <p-autocomplete
-                          (completeMethod)="filterTrucks($event)"
-                          formControlName="assignedTruck"
-                          optionLabel="truckNumber"
-                          placeholder="Search for a truck"
-                          class="form-control"></p-autocomplete>
-        </div>
+        <td>
+          <input type="number" id="freightWeight" formControlName="freightWeight" class="form-control"
+                 [ngClass]="{'is-invalid': orderForm.controls['freightWeight'].invalid}" />
+          <div *ngIf="orderForm.controls['freightWeight'].invalid" class="invalid-feedback">Freight weight is required.</div>
+        </td>
 
-      </div>
+        <td>
+          <p-autocomplete (completeMethod)="filterTrucks($event)" formControlName="assignedTruck"
+                          optionLabel="truckNumber" placeholder="Search for a truck" class="form-control"></p-autocomplete>
+        </td>
 
-      <!-- Second Column (Right Side) -->
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="destination">Destination</label>
-          <p-dropdown [options]="routeLocations" formControlName="destination" optionLabel="locationName" placeholder="Select destination" class="form-control"></p-dropdown>
-        </div>
+        <td>
+          <p-dropdown [options]="drivers" formControlName="assignedDriver" optionLabel="driverName"
+                      placeholder="Select a driver" class="form-control"></p-dropdown>
+        </td>
 
-        <div class="form-group">
-          <label for="assignedDriver">Assigned Driver</label>
-          <p-dropdown [options]="drivers" formControlName="assignedDriver" optionLabel="driverName" placeholder="Select a driver" class="form-control"></p-dropdown>
-        </div>
-
-        <div class="form-group">
-          <label for="status">Status</label>
+        <td>
           <input type="text" id="status" formControlName="status" class="form-control" />
-        </div>
+        </td>
 
-        <div class="form-group">
-          <label for="commissionAmount">Commission Amount</label>
+        <td>
           <input type="number" id="commissionAmount" formControlName="commissionAmount" class="form-control" />
-        </div>
+        </td>
 
-        <div class="form-group">
-          <label for="approvedBy">Approved By</label>
+        <td>
           <input type="text" id="approvedBy" formControlName="approvedBy" class="form-control" />
-        </div>
+        </td>
 
-        <div class="form-group">
-          <label for="clearance">Clearance</label>
+        <td>
           <input type="text" id="clearance" formControlName="clearance" class="form-control" />
-        </div>
+        </td>
 
-        <div class="form-group">
-          <label for="incharge">Incharge</label>
+        <td>
           <input type="text" id="incharge" formControlName="incharge" class="form-control" />
-        </div>
-      </div>
-    </div>
+        </td>
+        <td>
+          <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid">Place Order</button>
+          <button type="button" class="btn btn-danger ml-2" (click)="deleteOrder()">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
-    <div class="form-group text-center mt-3">
-      <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid">Submit</button>
-      <button type="button" class="btn btn-danger ml-2" (click)="deleteOrder()">Delete</button>
+    <div class="text-center mt-3">
+
     </div>
   </form>
 </div>
