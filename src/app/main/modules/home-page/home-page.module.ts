@@ -30,6 +30,7 @@ import { OrderManagementComponent } from "./order-details/addOrder.component";
     EditorModule,
     HomePageRoutingModule,
     CalendarModule,
+    CommonModule,
     DropdownModule,
     FormsModule,
     CardModule,

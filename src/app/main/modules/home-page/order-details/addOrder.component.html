@@ -9,7 +9,7 @@
 
     <!-- Add Order Form Section -->
     <div *ngIf="currentTab === 'add'" class="form-section">
-      <form (ngSubmit)="addOrder()">
+      <form (ngSubmit)="createOrder(newOrder)">
         <div class="form-row">
           <div class="form-group">
             <label for="clientName">Client Name:</label>
