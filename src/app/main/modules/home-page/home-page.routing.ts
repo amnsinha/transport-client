@@ -3,9 +3,9 @@ import {CommonModule} from "@angular/common";
 import {RouterModule, Routes} from "@angular/router";
 
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 import { AddClientComponent } from "./add-client/addClient.component";
-
+import { AddTruckComponent } from "./add-truck/addTruck.component";
+// import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 
 const homeroutes: Routes = [
   {
@@ -14,7 +14,7 @@ const homeroutes: Routes = [
   },
   {
     path: "manage-truck",
-    component: OrderDetailsComponent
+    component: AddTruckComponent
   },
   {
     path: "add-client",

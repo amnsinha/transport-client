@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
-import { Trucks } from '../../../../models/Trucks'; // Import the interface
 
 @Component({
   selector: 'app-add-truck',
-  templateUrl: './add-truck.component.html',
-  styleUrls: ['./add-truck.component.css']
+  templateUrl: './addTruck.component.html',
+  styleUrls: ['./addTruck.component.css']
 })
 export class AddTruckComponent {
-  currentTab: string = 'add';  // Default to 'Add Truck' tab
-  newTruck: Trucks = {
-    id: 0,
+  currentTab: string = 'add'; // Default tab is 'Add Truck'
+
+  trucks: any[] = []; // This will store the truck data
+
+  newTruck = {
     truckNumber: '',
     registrationNumber: '',
     model: '',
-    capacity: 0,
+    capacity: null,
     fuelType: '',
     status: '',
     ownerNumber: '',
@@ -21,33 +22,27 @@ export class AddTruckComponent {
     driverName: '',
     driverNumber: '',
     fright: '',
-    active: true,
-    documents: {},
-    nextMaintenanceDate: new Date()
-  };  // Initial new truck object
-  allTrucks: Trucks[] = [];  // Array to store all trucks
+    active: false,
+    nextMaintenanceDate: null
+  };
 
-  // Switch between tabs
-  switchTab(tab: string): void {
+  switchTab(tab: string) {
     this.currentTab = tab;
   }
 
-  // Add new truck to the list (you can extend it to an API call later)
-  addTruck(): void {
-    this.newTruck.id = this.allTrucks.length + 1;  // Assign a new ID based on the current length
-    this.allTrucks.push({ ...this.newTruck });  // Add the new truck to the array
-    this.resetForm();  // Reset form after submission
-    this.switchTab('all');  // Switch to 'All Trucks' tab after adding
-  }
+  addTruck() {
+    // Add the new truck to the trucks array
+    this.trucks.push({
+      date: new Date().toLocaleDateString(),
+      ...this.newTruck
+    });
 
-  // Reset form fields
-  resetForm(): void {
+    // Reset the form
     this.newTruck = {
-      id: 0,
       truckNumber: '',
       registrationNumber: '',
       model: '',
-      capacity: 0,
+      capacity: null,
       fuelType: '',
       status: '',
       ownerNumber: '',
@@ -55,9 +50,8 @@ export class AddTruckComponent {
       driverName: '',
       driverNumber: '',
       fright: '',
-      active: true,
-      documents: {},
-      nextMaintenanceDate: new Date()
+      active: false,
+      nextMaintenanceDate: null
     };
   }
 }
