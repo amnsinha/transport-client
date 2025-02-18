@@ -16,12 +16,12 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddClientComponent } from "./add-client/addClient.component";
 import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
-import { OrderManagementComponent } from "./order-details/addOrder.component";
+import {OrderComponent} from "./order/order.component";
 
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
-    , DashboardComponent,AddClientComponent,OrderDetailsComponent,AddTruckComponent,OrderManagementComponent],
+    , DashboardComponent,AddClientComponent,OrderDetailsComponent,AddTruckComponent, OrderComponent],
   exports: [
     HeaderComponent
   ],
@@ -37,6 +37,11 @@ import { OrderManagementComponent } from "./order-details/addOrder.component";
     ReactiveFormsModule,
     TabViewModule,
     InputTextModule,
+    ReactiveFormsModule, // Required for reactive forms
+    HttpClientModule, // Required for HTTP requests
+    DropdownModule, // For dropdown
+    CardModule, // For cards
+    InputTextModule, // For input text fields
 
   ]
 })
