@@ -10,14 +10,9 @@ import {HomePageModule} from "./main/modules/home-page/home-page.module";
 import {ToastMessageService} from "./shared/services/toast-message.service";
 import {MessageService} from "primeng/api";
 
-// Angular Material Modules
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { ReactiveFormsModule } from '@angular/forms';
+import {CommonModule} from "@angular/common";
 
 
 
@@ -29,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HomePageModule,
+    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,

@@ -18,11 +18,6 @@ import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
 import { OrderManagementComponent } from "./order-details/addOrder.component";
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
@@ -34,7 +29,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     FileUploadModule,
     EditorModule,
     HomePageRoutingModule,
-    CommonModule,
     CalendarModule,
     DropdownModule,
     FormsModule,
@@ -42,11 +36,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     ReactiveFormsModule,
     TabViewModule,
     InputTextModule,
-     MatButtonModule,
-        MatInputModule,
-        MatTableModule,
-        MatFormFieldModule,
-        MatTabsModule,
+
   ]
 })
 export class HomePageModule {
