@@ -1,10 +1,7 @@
 
 /* Container for the entire component */
 .order-details-container {
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 /* Card Design for Tabs and Add Truck Form */
@@ -12,7 +9,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
 }
 
 /* Tab Section */
@@ -45,10 +42,6 @@
   background-color: #e0e0e0;
 }
 
-/* Add Truck Form Section */
-.form-section {
-  margin-top: 20px;
-}
 
 .form-row {
   display: flex;
@@ -116,7 +109,6 @@
 }
 
 .order-table th {
-  background-color: #007bff;
   color: white;
 }
 

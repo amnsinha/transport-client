@@ -14,19 +14,14 @@ import {TabViewModule} from 'primeng/tabview';
 import {InputTextModule} from 'primeng/inputtext';
 import {HttpClientModule} from '@angular/common/http';
 import { AddClientComponent } from "./add-client/addClient.component";
-import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
-import { OrderManagementComponent } from "./order-details/addOrder.component";
+import {OrderComponent} from "./order/order.component";
+import {AutoCompleteModule} from "primeng/autocomplete";
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
-    , DashboardComponent,AddClientComponent,OrderDetailsComponent,AddTruckComponent,OrderManagementComponent],
+    , DashboardComponent,AddClientComponent,AddTruckComponent, OrderComponent],
   exports: [
     HeaderComponent
   ],
@@ -34,19 +29,21 @@ import { MatTabsModule } from '@angular/material/tabs';
     FileUploadModule,
     EditorModule,
     HomePageRoutingModule,
-    CommonModule,
     CalendarModule,
+    CommonModule,
     DropdownModule,
     FormsModule,
     CardModule,
     ReactiveFormsModule,
     TabViewModule,
     InputTextModule,
-     MatButtonModule,
-        MatInputModule,
-        MatTableModule,
-        MatFormFieldModule,
-        MatTabsModule,
+    AutoCompleteModule,
+    ReactiveFormsModule, // Required for reactive forms
+    HttpClientModule, // Required for HTTP requests
+    DropdownModule, // For dropdown
+    CardModule, // For cards
+    InputTextModule, // For input text fields
+
   ]
 })
 export class HomePageModule {

@@ -2,17 +2,16 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterModule, Routes} from "@angular/router";
 
-import {DashboardComponent} from "./dashboard/dashboard.component";
 import { AddClientComponent } from "./add-client/addClient.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
-import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
-import { OrderManagementComponent } from "./order-details/addOrder.component";
-// import { OrderDetailsComponent } from "./viewDetails/viewDetails.component";
+import {OrderComponent} from "./order/order.component";
+
+
 
 const homeroutes: Routes = [
   {
     path: "start",
-    component: OrderManagementComponent
+    component: OrderComponent
   },
   {
     path: "manage-truck",

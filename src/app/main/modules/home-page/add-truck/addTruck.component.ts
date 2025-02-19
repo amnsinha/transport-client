@@ -1,57 +1,79 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TrucksService } from '../../../../shared/services/trucks.service';
+import { Trucks } from '../../../../models/Trucks';
 
 @Component({
-  selector: 'app-add-truck',
+  selector: 'app-app-truck',
   templateUrl: './addTruck.component.html',
   styleUrls: ['./addTruck.component.css']
 })
 export class AddTruckComponent {
-  currentTab: string = 'add'; // Default tab is 'Add Truck'
+  orderForm: FormGroup;
+  trucks: Trucks[] = [];
+  editingIndex: number | null = null;
 
-  trucks: any[] = []; // This will store the truck data
-
-  newTruck = {
-    truckNumber: '',
-    registrationNumber: '',
-    model: '',
-    capacity: null,
-    fuelType: '',
-    status: '',
-    ownerNumber: '',
-    ownerName: '',
-    driverName: '',
-    driverNumber: '',
-    fright: '',
-    active: false,
-    nextMaintenanceDate: null
-  };
-
-  switchTab(tab: string) {
-    this.currentTab = tab;
+  constructor(private fb: FormBuilder, private trucksService: TrucksService) {
+    this.orderForm = this.fb.group({
+      truckNumber: ['', Validators.required],
+      registrationNumber: ['', Validators.required],
+      model: ['', Validators.required],
+      capacity: ['', [Validators.required, Validators.min(1)]],
+      fuelType: ['', Validators.required],
+      status: ['', Validators.required],
+      ownerNumber: ['', Validators.required],
+      ownerName: ['', Validators.required],
+      driverName: ['', Validators.required],
+      driverNumber: ['', Validators.required],
+      fright: ['', Validators.required],
+      active: [false],
+      nextMaintenanceDate: ['', Validators.required]
+    });
+    this.fetchTrucks();
   }
 
-  addTruck() {
-    // Add the new truck to the trucks array
-    this.trucks.push({
-      date: new Date().toLocaleDateString(),
-      ...this.newTruck
+  fetchTrucks() {
+    this.trucksService.getAllTrucks().subscribe((data) => {
+      this.trucks = data;
     });
+  }
 
-    // Reset the form
-    this.newTruck = {
-      truckNumber: '',
-      registrationNumber: '',
-      model: '',
-      capacity: null,
-      fuelType: '',
-      status: '',
-      ownerNumber: '',
-      ownerName: '',
-      driverName: '',
-      driverNumber: '',
-      fright: '',
-      active: false,
-      nextMaintenanceDate: null
-    };
+  submitOrder() {
+    if (this.orderForm.invalid) return;
+
+    const truckData: Trucks = { ...this.orderForm.value };
+
+    if (this.editingIndex !== null) {
+      this.trucksService.updateTruck(this.trucks[this.editingIndex].id, truckData).subscribe((updatedTruck) => {
+        this.trucks[this.editingIndex!] = updatedTruck;
+        this.editingIndex = null;
+        this.orderForm.reset();
+      });
+    } else {
+      this.trucksService.createTruck(truckData).subscribe((newTruck) => {
+        this.trucks.push(newTruck);
+        this.orderForm.reset();
+      });
+    }
+  }
+
+  editOrder(index: number) {
+    this.editingIndex = index;
+    this.orderForm.patchValue(this.trucks[index]);
+  }
+
+  cancelEdit() {
+    this.editingIndex = null;
+    this.orderForm.reset();
+  }
+
+  deleteOrder(index: number) {
+    const truckId = this.trucks[index].id;
+    this.trucksService.deleteTruck(truckId).subscribe(() => {
+      this.trucks.splice(index, 1);
+      if (this.editingIndex === index) {
+        this.cancelEdit();
+      }
+    });
   }
 }

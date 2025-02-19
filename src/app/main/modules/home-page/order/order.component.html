@@ -1,0 +1,101 @@
+<div class="card p-3">
+  <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+    <table class="table table-bordered">
+      <thead>
+        <tr style="font-size: 11px; font-weight: bold; background-color: #f8f9fa;">
+          <th>Party</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Freight Weight</th>
+          <th>Assigned Truck</th>
+          <th>Assigned Driver</th>
+          <th>Status</th>
+          <th>Commission Amount</th>
+          <th>Approved By</th>
+          <th>Clearance</th>
+          <th>Incharge</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- Party Input with Dropdown -->
+          <td class="position-relative">
+            <input type="text" formControlName="party" class="form-control"    placeholder="Select Party or Enter" (input)="filterParties()" (focus)="showPartyDropdown = true" (blur)="hideDropdown('party')">
+            <ul *ngIf="showPartyDropdown" class="dropdown-menu show">
+              <li *ngFor="let party of filteredParties" (click)="selectValue('party', party.label)">
+                {{ party.label }}
+              </li>
+            </ul>
+          </td>
+
+          <!-- Origin Input with Dropdown -->
+          <td class="position-relative">
+            <input type="text" formControlName="origin" class="form-control"    placeholder="Select Origin or Enter"(input)="filterOrigins()" (focus)="showOriginDropdown = true" (blur)="hideDropdown('origin')">
+            <ul *ngIf="showOriginDropdown" class="dropdown-menu show">
+              <li *ngFor="let location of filteredOrigins" (click)="selectValue('origin', location.label)">
+                {{ location.label }}
+              </li>
+            </ul>
+          </td>
+
+          <!-- Destination Input with Dropdown -->
+          <td class="position-relative">
+            <input type="text" formControlName="destination" class="form-control"    placeholder="Select Destination or Enter"(input)="filterDestinations()" (focus)="showDestinationDropdown = true" (blur)="hideDropdown('destination')">
+            <ul *ngIf="showDestinationDropdown" class="dropdown-menu show">
+              <li *ngFor="let location of filteredDestinations" (click)="selectValue('destination', location.label)">
+                {{ location.label }}
+              </li>
+            </ul>
+          </td>
+
+          <td>
+            <input type="number" formControlName="freightWeight" class="form-control" />
+          </td>
+          <td class="position-relative">
+            <p-dropdown [options]="trucks" formControlName="assignedTruck" optionLabel="label" placeholder="Select truck"></p-dropdown>
+          </td>
+          <td class="position-relative">
+            <p-dropdown [options]="drivers" formControlName="assignedDriver" optionLabel="label" placeholder="Select driver"></p-dropdown>
+          </td>
+          <td>
+            <input type="text" formControlName="status" class="form-control" />
+          </td>
+          <td>
+            <input type="number" formControlName="commissionAmount" class="form-control" />
+          </td>
+          <td>
+            <input type="text" formControlName="approvedBy" class="form-control" />
+          </td>
+          <td>
+            <input type="text" formControlName="clearance" class="form-control" />
+          </td>
+          <td>
+            <input type="text" formControlName="incharge" class="form-control" />
+          </td>
+          <td>
+            <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid">Add Order</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  <table class="table table-bordered">
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.party }}</td>
+        <td>{{ order.origin }}</td>
+        <td>{{ order.destination }}</td>
+        <td>{{ order.assignedTruck }}</td>
+        <td>{{ order.assignedDriver }}</td>
+        <td>{{ order.status }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="editOrder(order)">Edit</button>
+          <button class="btn btn-danger btn-sm ml-2" (click)="deleteOrder(order.orderId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

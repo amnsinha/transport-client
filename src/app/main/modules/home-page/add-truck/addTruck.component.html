@@ -1,127 +1,76 @@
 <div class="order-details-container">
-  <!-- Card for Tabs and Form -->
-  <div class="card add-truck-form">
-    <!-- Tab Section -->
-    <div class="tabs">
-      <button [class.active]="currentTab === 'add'" (click)="switchTab('add')">Add Truck</button>
-      <button [class.active]="currentTab === 'all'" (click)="switchTab('all')">All Trucks</button>
-    </div>
-
-    <!-- Add Truck Form Section -->
-    <div *ngIf="currentTab === 'add'" class="form-section">
-      <form (ngSubmit)="addTruck()">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="truckNumber">Truck Number:</label>
-            <input id="truckNumber" [(ngModel)]="newTruck.truckNumber" name="truckNumber" required class="input-field" />
-          </div>
-
-          <div class="form-group">
-            <label for="registrationNumber">Registration Number:</label>
-            <input id="registrationNumber" [(ngModel)]="newTruck.registrationNumber" name="registrationNumber" required class="input-field" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="model">Model:</label>
-            <input id="model" [(ngModel)]="newTruck.model" name="model" required class="input-field" />
-          </div>
-
-          <div class="form-group">
-            <label for="capacity">Capacity:</label>
-            <input type="number" id="capacity" [(ngModel)]="newTruck.capacity" name="capacity" required class="input-field" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fuelType">Fuel Type:</label>
-            <input id="fuelType" [(ngModel)]="newTruck.fuelType" name="fuelType" required class="input-field" />
-          </div>
-
-          <div class="form-group">
-            <label for="status">Status:</label>
-            <input id="status" [(ngModel)]="newTruck.status" name="status" required class="input-field" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="ownerNumber">Owner Number:</label>
-            <input id="ownerNumber" [(ngModel)]="newTruck.ownerNumber" name="ownerNumber" required class="input-field" />
-          </div>
-
-          <div class="form-group">
-            <label for="ownerName">Owner Name:</label>
-            <input id="ownerName" [(ngModel)]="newTruck.ownerName" name="ownerName" required class="input-field" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="driverName">Driver Name:</label>
-            <input id="driverName" [(ngModel)]="newTruck.driverName" name="driverName" required class="input-field" />
-          </div>
-
-          <div class="form-group">
-            <label for="driverNumber">Driver Number:</label>
-            <input id="driverNumber" [(ngModel)]="newTruck.driverNumber" name="driverNumber" required class="input-field" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fright">Fright:</label>
-            <input id="fright" [(ngModel)]="newTruck.fright" name="fright" required class="input-field" />
-          </div>
-
-          <div class="form-group">
-            <label for="active">Active:</label>
-            <input type="checkbox" id="active" [(ngModel)]="newTruck.active" name="active" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nextMaintenanceDate">Next Maintenance Date:</label>
-            <input type="date" id="nextMaintenanceDate" [(ngModel)]="newTruck.nextMaintenanceDate" name="nextMaintenanceDate" class="input-field" />
-          </div>
-        </div>
-
-        <button type="submit" class="submit-button">Add Truck</button>
+  <!-- Card for Truck Form and Table -->
+  <div class="card p-3">
+    
+    <!-- Trucks Table Section -->
+    <div class="form-section">
+      <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+        <table class="table table-bordered">
+          <thead>
+            <tr style="font-size: 11px; font-weight: bold; background-color: #f8f9fa;">
+              <th>Truck Number</th>
+              <th>Registration Number</th>
+              <th>Model</th>
+              <th>Capacity</th>
+              <th>Fuel Type</th>
+              <th>Status</th>
+              <th>Owner Number</th>
+              <th>Owner Name</th>
+              <th>Driver Name</th>
+              <th>Driver Number</th>
+              <th>Freight</th>
+              <th>Active</th>
+              <th>Maintenance Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input id="truckNumber" formControlName="truckNumber" required class="form-control" /></td>
+              <td><input id="registrationNumber" formControlName="registrationNumber" required class="form-control" /></td>
+              <td><input id="model" formControlName="model" required class="form-control" /></td>
+              <td><input type="number" id="capacity" formControlName="capacity" required class="form-control" /></td>
+              <td><input id="fuelType" formControlName="fuelType" required class="form-control" /></td>
+              <td><input id="status" formControlName="status" required class="form-control" /></td>
+              <td><input id="ownerNumber" formControlName="ownerNumber" required class="form-control" /></td>
+              <td><input id="ownerName" formControlName="ownerName" required class="form-control" /></td>
+              <td><input id="driverName" formControlName="driverName" required class="form-control" /></td>
+              <td><input id="driverNumber" formControlName="driverNumber" required class="form-control" /></td>
+              <td><input id="freight" formControlName="freight" required class="form-control" /></td>
+              <td><input type="checkbox" id="active" formControlName="active" /></td>
+              <td><input type="date" id="nextMaintenanceDate" formControlName="nextMaintenanceDate" class="form-control" /></td>
+              <td>
+                <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid">{{ editingIndex !== null ? 'Update' : 'Add' }}</button>
+                <button type="button" class="btn btn-secondary ml-2" *ngIf="editingIndex !== null" (click)="cancelEdit()">Cancel</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </form>
     </div>
 
-    <!-- Trucks Table Section -->
-    <div *ngIf="currentTab === 'all'">
-      <table class="order-table">
-        <thead>
-          <tr>
-            <th>Truck Number</th>
-            <th>Registration Number</th>
-            <th>Model</th>
-            <th>Capacity</th>
-            <th>Fuel Type</th>
-            <th>Status</th>
-            <th>Owner Name</th>
-            <th>Driver Name</th>
-            <th>Active</th>
-            <th>Next Maintenance Date</th>
-          </tr>
-        </thead>
+    <!-- List of Added Trucks -->
+    <div class="truck-list">
+      <table class="table table-bordered">
         <tbody>
-          <tr *ngFor="let truck of trucks">
+          <tr *ngFor="let truck of trucks; let i = index">
             <td>{{ truck.truckNumber }}</td>
             <td>{{ truck.registrationNumber }}</td>
             <td>{{ truck.model }}</td>
             <td>{{ truck.capacity }}</td>
             <td>{{ truck.fuelType }}</td>
             <td>{{ truck.status }}</td>
+            <td>{{ truck.ownerNumber }}</td>
             <td>{{ truck.ownerName }}</td>
             <td>{{ truck.driverName }}</td>
+            <td>{{ truck.driverNumber }}</td>
+            <td>{{ truck.fright }}</td>
             <td>{{ truck.active ? 'Yes' : 'No' }}</td>
             <td>{{ truck.nextMaintenanceDate | date }}</td>
+            <td>
+              <button type="button" class="btn btn-warning btn-sm" (click)="editOrder(i)">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteOrder(i)">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>
