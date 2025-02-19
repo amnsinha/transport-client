@@ -1,6 +1,6 @@
 import {
   BaseIcon
-} from "./chunk-GFDAV4W5.js";
+} from "./chunk-TX2EV6TY.js";
 import {
   Component,
   setClassMetadata,
@@ -120,4 +120,4 @@ export {
   ChevronLeftIcon,
   ChevronRightIcon
 };
-//# sourceMappingURL=chunk-KWLT3WFR.js.map
+//# sourceMappingURL=chunk-B4WAGAI3.js.map

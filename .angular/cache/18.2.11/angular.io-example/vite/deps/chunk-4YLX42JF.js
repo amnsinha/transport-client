@@ -1,16 +1,16 @@
 import {
   BaseIcon
-} from "./chunk-GFDAV4W5.js";
+} from "./chunk-TX2EV6TY.js";
 import {
   DomHandler
 } from "./chunk-BUGEQH7Q.js";
 import {
-  UniqueComponentId
-} from "./chunk-COF5AZPK.js";
-import {
   DOCUMENT,
   isPlatformBrowser
 } from "./chunk-5WYSIKEV.js";
+import {
+  UniqueComponentId
+} from "./chunk-COF5AZPK.js";
 import {
   Component,
   Directive,
@@ -206,4 +206,4 @@ export {
   AutoFocusModule,
   SpinnerIcon
 };
-//# sourceMappingURL=chunk-WF5BRD7L.js.map
+//# sourceMappingURL=chunk-4YLX42JF.js.map

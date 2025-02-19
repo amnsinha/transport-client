@@ -2,13 +2,13 @@ import {
   DomHandler
 } from "./chunk-BUGEQH7Q.js";
 import {
-  ObjectUtils,
-  PrimeNGConfig
-} from "./chunk-COF5AZPK.js";
-import {
   DOCUMENT,
   isPlatformBrowser
 } from "./chunk-5WYSIKEV.js";
+import {
+  ObjectUtils,
+  PrimeNGConfig
+} from "./chunk-COF5AZPK.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -340,4 +340,4 @@ export {
   RippleModule,
   TimesIcon
 };
-//# sourceMappingURL=chunk-GFDAV4W5.js.map
+//# sourceMappingURL=chunk-TX2EV6TY.js.map

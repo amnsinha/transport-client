@@ -5,11 +5,6 @@ import {
   NG_VALUE_ACCESSOR
 } from "./chunk-B7756PYC.js";
 import {
-  Header,
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-COF5AZPK.js";
-import {
   CommonModule,
   NgClass,
   NgIf,
@@ -17,6 +12,11 @@ import {
   NgTemplateOutlet,
   isPlatformServer
 } from "./chunk-5WYSIKEV.js";
+import {
+  Header,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-COF5AZPK.js";
 import {
   ChangeDetectionStrategy,
   Component,

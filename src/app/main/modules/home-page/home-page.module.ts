@@ -16,7 +16,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddClientComponent } from "./add-client/addClient.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
 import {OrderComponent} from "./order/order.component";
-import {AutoCompleteModule} from "primeng/autocomplete";
 
 
 @NgModule({
@@ -31,18 +30,20 @@ import {AutoCompleteModule} from "primeng/autocomplete";
     HomePageRoutingModule,
     CalendarModule,
     CommonModule,
+    CommonModule,
     DropdownModule,
     FormsModule,
     CardModule,
     ReactiveFormsModule,
     TabViewModule,
     InputTextModule,
-    AutoCompleteModule,
+    // AutoCompleteModule,
     ReactiveFormsModule, // Required for reactive forms
     HttpClientModule, // Required for HTTP requests
     DropdownModule, // For dropdown
     CardModule, // For cards
     InputTextModule, // For input text fields
+
 
   ]
 })

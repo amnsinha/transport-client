@@ -1,17 +1,17 @@
 import {
-  Footer,
-  Header,
-  ObjectUtils,
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-COF5AZPK.js";
-import {
   CommonModule,
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-5WYSIKEV.js";
+import {
+  Footer,
+  Header,
+  ObjectUtils,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-COF5AZPK.js";
 import {
   ChangeDetectionStrategy,
   Component,
