@@ -20,8 +20,8 @@ export class PartyService {
     return this.http.get<Party>(`${this.apiUrl}/${id}`);
   }
 
-  createParty(party: Party): Observable<Party> {
-    return this.http.post<Party>(this.apiUrl, party);
+  saveParty(party: Party): Observable<Party> {
+    return this.http.post<Party>(this.apiUrl,party);
   }
 
   updateParty(id: number, party: Party): Observable<Party> {

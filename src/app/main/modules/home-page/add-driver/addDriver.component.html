@@ -19,9 +19,9 @@
               <td><input id="driverNumber" formControlName="driverNumber" required class="form-control" /></td>
               <td>
                 <button type="submit" class="btn btn-primary" [disabled]="driverForm.invalid">
-                  {{ editingIndex !== null ? 'Update' : 'Add' }}
+                  {{ editingDriverId !== null ? 'Update' : 'Add' }}
                 </button>
-                <button type="button" class="btn btn-secondary ml-2" *ngIf="editingIndex !== null" (click)="cancelEdit()">Cancel</button>
+                <button type="button" class="btn btn-secondary ml-2" *ngIf="editingDriverId !== null" (click)="cancelEdit()">Cancel</button>
               </td>
             </tr>
           </tbody>
@@ -30,15 +30,22 @@
     </div>
 
     <!-- List of Added Drivers -->
-    <div class="driver-list">
+    <div class="driver-list mt-3">
       <table class="table table-bordered">
+        <thead>
+          <tr style="font-size: 11px; font-weight: bold; background-color: #f1f1f1;">
+            <th>Driver Name</th>
+            <th>Driver Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr *ngFor="let driver of drivers; let i = index">
+          <tr *ngFor="let driver of drivers">
             <td>{{ driver.driverName }}</td>
             <td>{{ driver.driverNumber }}</td>
             <td>
-              <button type="button" class="btn btn-warning btn-sm" (click)="editDriver(i)">Edit</button>
-              <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteDriver(i)">Delete</button>
+              <button type="button" class="btn btn-warning btn-sm" (click)="editDriver(driver)">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteDriver(driver.id)">Delete</button>
             </td>
           </tr>
         </tbody>

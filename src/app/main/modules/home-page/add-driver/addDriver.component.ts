@@ -11,7 +11,7 @@ import { Driver } from '../../../../models/Driver';
 export class AddDriverComponent {
   driverForm: FormGroup;
   drivers: Driver[] = [];
-  editingIndex: number | null = null;
+  editingDriverId: number | null = null; // Store ID instead of index
 
   constructor(private fb: FormBuilder, private driverService: DriverService) {
     this.driverForm = this.fb.group({
@@ -22,52 +22,58 @@ export class AddDriverComponent {
   }
 
   fetchDrivers() {
-    this.driverService.getAllDrivers().subscribe((data) => {
-      this.drivers = data;
-    });
+    this.driverService.getAllDrivers().subscribe(
+      (data) => (this.drivers = data),
+      (error) => console.error('Error fetching drivers:', error)
+    );
   }
 
   submitDriver() {
     if (this.driverForm.invalid) return;
-
-    const driverData: Omit<Driver, 'id'> = { ...this.driverForm.value };
-
-    if (this.editingIndex !== null) {
-      // Update existing driver
-      const driverId = this.drivers[this.editingIndex].id;
-      this.driverService
-        .saveDriver({ id: driverId, ...driverData }) // Ensure 'id' is only included for updates
-        .subscribe((updatedDriver) => {
-          this.drivers[this.editingIndex!] = updatedDriver;
-          this.editingIndex = null;
-          this.driverForm.reset();
-        });
-    } else {
-      // Create new driver
-      this.driverService.saveDriver(driverData as Driver).subscribe((newDriver) => {
-        this.drivers.push(newDriver);
-        this.driverForm.reset();
-      });
-    }
+  
+    const driverData: Driver = this.editingDriverId 
+      ? { id: this.editingDriverId, ...this.driverForm.value } // Include ID for update
+      : { ...this.driverForm.value }; // Exclude ID for create
+  
+    this.driverService.saveDriver(driverData).subscribe(
+      (savedDriver) => {
+        if (this.editingDriverId !== null) {
+          // Update driver in the list
+          const index = this.drivers.findIndex((d) => d.id === this.editingDriverId);
+          if (index !== -1) this.drivers[index] = savedDriver;
+        } else {
+          // Add new driver to the list
+          this.drivers.push(savedDriver);
+        }
+        this.resetForm();
+      },
+      (error) => console.error('Error saving driver:', error)
+    );
   }
+  
+  
 
-  editDriver(index: number) {
-    this.editingIndex = index;
-    this.driverForm.patchValue(this.drivers[index]);
+  editDriver(driver: Driver) {
+    this.editingDriverId = driver.id;
+    this.driverForm.patchValue(driver);
   }
 
   cancelEdit() {
-    this.editingIndex = null;
-    this.driverForm.reset();
+    this.resetForm();
   }
 
-  deleteDriver(index: number) {
-    const driverId = this.drivers[index].id;
-    this.driverService.deleteDriverById(driverId).subscribe(() => {
-      this.drivers.splice(index, 1);
-      if (this.editingIndex === index) {
-        this.cancelEdit();
-      }
-    });
+  deleteDriver(driverId: number) {
+    this.driverService.deleteDriverById(driverId).subscribe(
+      () => {
+        this.drivers = this.drivers.filter((d) => d.id !== driverId);
+        if (this.editingDriverId === driverId) this.resetForm();
+      },
+      (error) => console.error('Error deleting driver:', error)
+    );
+  }
+
+  private resetForm() {
+    this.editingDriverId = null;
+    this.driverForm.reset();
   }
 }
