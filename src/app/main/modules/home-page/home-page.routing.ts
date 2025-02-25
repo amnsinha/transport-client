@@ -5,6 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { AddClientComponent } from "./add-client/addClient.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
 import {OrderComponent} from "./order/order.component";
+import { AddDriverComponent } from "./add-driver/addDriver.component";
 
 
 
@@ -20,6 +21,10 @@ const homeroutes: Routes = [
   {
     path: "add-client",
     component: AddClientComponent
+  },
+  {
+    path: "add-driver",
+    component: AddDriverComponent
   }
 ];
 
