@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {RouteLocation} from "../../models/RouteLocation";
 
-
+import { environment } from '../../../environment/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class RouteLocationService {
-  private apiUrl = 'http://localhost:8080/api/route-locations';
+
+  private apiUrl = `${environment.apiBaseUrl}/api/route-locations`;
 
   constructor(private http: HttpClient) {}
 
