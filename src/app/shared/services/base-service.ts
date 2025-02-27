@@ -1,5 +1,5 @@
 import {HttpHeaders} from '@angular/common/http';
-import {environment} from "../../environments/environment";
+import {environment} from "../../environment/environment";
 
 /**
  * This class defines a base service class
@@ -37,8 +37,8 @@ export class BaseService {
    * @returns {string} - full url or relative path if base url not defined in environment
    */
   protected getServiceUrl(path: string): string {
-    if (environment.api) {
-      return environment.api + path;
+    if (environment.apiBaseUrl) {
+      return environment.apiBaseUrl + path;
     } else {
       return path;
     }
