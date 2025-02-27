@@ -15,13 +15,14 @@
           </thead>
           <tbody>
             <tr>
-              <td><input formControlName="partyName" class="form-control" required /></td>
-              <td><input formControlName="ownerName" class="form-control" required /></td>
-              <td><input formControlName="ownerNumber" class="form-control" required /></td>
+              <td><input id="partyName" formControlName="partyName" class="form-control" required /></td>
+              <td><input id="ownerName" formControlName="ownerName" class="form-control" required /></td>
+              <td><input id="ownerNumber" formControlName="ownerNumber" class="form-control" required pattern="\d{10}" /></td>
               <td>
                 <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid">
-                  {{ editId !== null ? 'Update' : 'Add' }}
+                  {{ editingClientId !== null ? 'Update' : 'Add' }}
                 </button>
+                <button type="button" class="btn btn-secondary ml-2" *ngIf="editingClientId !== null" (click)="cancelEdit()">Cancel</button>
               </td>
             </tr>
           </tbody>
@@ -32,6 +33,14 @@
     <!-- Client List Display -->
     <div class="client-list mt-3" *ngIf="clients.length > 0">
       <table class="table table-bordered">
+        <thead>
+          <tr style="font-size: 11px; font-weight: bold; background-color: #f8f9fa;">
+            <th>Party Name</th>
+            <th>Owner Name</th>
+            <th>Contact No.</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
         <tbody>
           <tr *ngFor="let client of clients">
             <td>{{ client.partyName }}</td>
@@ -45,6 +54,5 @@
         </tbody>
       </table>
     </div>
-
   </div>
 </div>

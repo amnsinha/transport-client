@@ -3,6 +3,7 @@
     <table class="table table-bordered">
       <thead>
         <tr style="font-size: 11px; font-weight: bold; background-color: #f8f9fa;">
+          <th>Order ID</th>
           <th>Party</th>
           <th>Origin</th>
           <th>Destination</th>
@@ -14,86 +15,108 @@
           <th>Approved By</th>
           <th>Clearance</th>
           <th>Incharge</th>
-          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <!-- Party Input with Dropdown -->
-          <td class="position-relative">
-            <input type="text" formControlName="party" class="form-control"    placeholder="Select Party or Enter" (input)="filterParties()" (focus)="showPartyDropdown = true" (blur)="hideDropdown('party')">
-            <ul *ngIf="showPartyDropdown" class="dropdown-menu show">
-              <li *ngFor="let party of filteredParties" (click)="selectValue('party', party.label)">
-                {{ party.label }}
-              </li>
-            </ul>
-          </td>
-
-          <!-- Origin Input with Dropdown -->
-          <td class="position-relative">
-            <input type="text" formControlName="origin" class="form-control"    placeholder="Select Origin or Enter"(input)="filterOrigins()" (focus)="showOriginDropdown = true" (blur)="hideDropdown('origin')">
-            <ul *ngIf="showOriginDropdown" class="dropdown-menu show">
-              <li *ngFor="let location of filteredOrigins" (click)="selectValue('origin', location.label)">
-                {{ location.label }}
-              </li>
-            </ul>
-          </td>
-
-          <!-- Destination Input with Dropdown -->
-          <td class="position-relative">
-            <input type="text" formControlName="destination" class="form-control"    placeholder="Select Destination or Enter"(input)="filterDestinations()" (focus)="showDestinationDropdown = true" (blur)="hideDropdown('destination')">
-            <ul *ngIf="showDestinationDropdown" class="dropdown-menu show">
-              <li *ngFor="let location of filteredDestinations" (click)="selectValue('destination', location.label)">
-                {{ location.label }}
-              </li>
-            </ul>
-          </td>
-
           <td>
-            <input type="number" formControlName="freightWeight" class="form-control" />
-          </td>
-          <td class="position-relative">
-            <p-dropdown [options]="trucks" formControlName="assignedTruck" optionLabel="label" placeholder="Select truck"></p-dropdown>
-          </td>
-          <td class="position-relative">
-            <p-dropdown [options]="drivers" formControlName="assignedDriver" optionLabel="label" placeholder="Select driver"></p-dropdown>
+            <input type="text" formControlName="orderId" class="form-control" readonly>
           </td>
           <td>
-            <input type="text" formControlName="status" class="form-control" />
+            <select formControlName="party" class="form-control">
+              <option *ngFor="let party of parties" [value]="party.id">{{ party.partyName }}</option>
+            </select>
           </td>
           <td>
-            <input type="number" formControlName="commissionAmount" class="form-control" />
+            <select formControlName="origin" class="form-control">
+              <option *ngFor="let location of routeLocations" [value]="location.id">{{ location.locationName }}</option>
+            </select>
           </td>
           <td>
-            <input type="text" formControlName="approvedBy" class="form-control" />
+            <select formControlName="destination" class="form-control">
+              <option *ngFor="let location of routeLocations" [value]="location.id">{{ location.locationName }}</option>
+            </select>
           </td>
           <td>
-            <input type="text" formControlName="clearance" class="form-control" />
+            <input type="number" formControlName="freightWeight" class="form-control">
           </td>
           <td>
-            <input type="text" formControlName="incharge" class="form-control" />
+            <select formControlName="assignedTruck" class="form-control">
+              <option *ngFor="let truck of trucks" [value]="truck.id">{{ truck.truckNumber }}</option>
+            </select>
           </td>
           <td>
-            <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid">Add Order</button>
+            <select formControlName="assignedDriver" class="form-control">
+              <option *ngFor="let driver of drivers" [value]="driver.id">{{ driver.driverName }}</option>
+            </select>
+          </td>
+          <td>
+            <select formControlName="status" class="form-control">
+              <option value="Pending">Pending</option>
+              <option value="In Transit">In Transit</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" formControlName="commissionAmount" class="form-control">
+          </td>
+          <td>
+            <input type="text" formControlName="approvedBy" class="form-control">
+          </td>
+          <td>
+            <select formControlName="clearance" class="form-control">
+              <option value="Approved">Approved</option>
+              <option value="Pending">Pending</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" formControlName="incharge" class="form-control">
           </td>
         </tr>
       </tbody>
     </table>
+    <button type="submit" class="btn btn-primary btn-sm">{{ orderId ? 'Update Order' : 'Add Order' }}</button>
+    <button *ngIf="orderId" type="button" class="btn btn-danger btn-sm" (click)="deleteOrder()">Delete Order</button>
   </form>
+</div>
 
+<!-- Orders List Table -->
+<div class="card p-3 mt-3">
+  <h5>Orders List</h5>
   <table class="table table-bordered">
+    <thead>
+      <tr style="font-size: 11px; font-weight: bold; background-color: #f8f9fa;">
+        <th>Order ID</th>
+        <th>Party</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Freight Weight</th>
+        <th>Assigned Truck</th>
+        <th>Assigned Driver</th>
+        <th>Status</th>
+        <th>Commission Amount</th>
+        <th>Approved By</th>
+        <th>Clearance</th>
+        <th>Incharge</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
     <tbody>
       <tr *ngFor="let order of orders">
-        <td>{{ order.orderId }}</td>
-        <td>{{ order.party }}</td>
-        <td>{{ order.origin }}</td>
-        <td>{{ order.destination }}</td>
-        <td>{{ order.assignedTruck }}</td>
-        <td>{{ order.assignedDriver }}</td>
+        <td>{{ order.party ? order.party.partyName : 'N/A' }}</td>
+        <td>{{ order.origin ? order.origin.locationName : 'N/A' }}</td>
+        <td>{{ order.destination ? order.destination.locationName : 'N/A' }}</td>
+        <td>{{ order.freightWeight }}</td>
+        <td>{{ order.assignedTruck ? order.assignedTruck.truckNumber : 'N/A' }}</td>
+        <td>{{ order.assignedDriver ? order.assignedDriver.driverName : 'N/A' }}</td>
         <td>{{ order.status }}</td>
+        <td>{{ order.commissionAmount }}</td>
+        <td>{{ order.approvedBy }}</td>
+        <td>{{ order.clearance }}</td>
+        <td>{{ order.incharge }}</td>
         <td>
-          <button class="btn btn-warning btn-sm" (click)="editOrder(order)">Edit</button>
-          <button class="btn btn-danger btn-sm ml-2" (click)="deleteOrder(order.orderId)">Delete</button>
+          <button class="btn btn-warning btn-sm" (click)="loadOrder()">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteOrder()">Delete</button>
         </td>
       </tr>
     </tbody>

@@ -4,14 +4,16 @@ import { TrucksService } from '../../../../shared/services/trucks.service';
 import { Trucks } from '../../../../models/Trucks';
 
 @Component({
-  selector: 'app-app-truck',
+  selector: 'app-add-truck',
   templateUrl: './addTruck.component.html',
   styleUrls: ['./addTruck.component.css']
 })
 export class AddTruckComponent {
   orderForm: FormGroup;
   trucks: Trucks[] = [];
-  editingIndex: number | null = null;
+  editingTruckId: number | null = null;
+  loading: boolean = false;  // Added for better UX
+  selectedTruck: Trucks | null = null; // Stores truck details for view mode
 
   constructor(private fb: FormBuilder, private trucksService: TrucksService) {
     this.orderForm = this.fb.group({
@@ -29,51 +31,100 @@ export class AddTruckComponent {
       active: [false],
       nextMaintenanceDate: ['', Validators.required]
     });
+
     this.fetchTrucks();
   }
 
+  // Fetch all trucks
   fetchTrucks() {
-    this.trucksService.getAllTrucks().subscribe((data) => {
-      this.trucks = data;
+    this.loading = true;
+    this.trucksService.getAllTrucks().subscribe({
+      next: (data) => {
+        this.trucks = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Error fetching trucks:', err);
+        this.loading = false;
+      }
     });
   }
 
+  // Fetch a single truck by ID
+  viewTruckDetails(truckId: number) {
+    this.trucksService.getTruckById(truckId).subscribe({
+      next: (truck) => {
+        this.selectedTruck = truck;
+      },
+      error: (err) => {
+        console.error('Error fetching truck details:', err);
+      }
+    });
+  }
+
+  // Create or update truck
   submitOrder() {
     if (this.orderForm.invalid) return;
-
     const truckData: Trucks = { ...this.orderForm.value };
 
-    if (this.editingIndex !== null) {
-      this.trucksService.updateTruck(this.trucks[this.editingIndex].id, truckData).subscribe((updatedTruck) => {
-        this.trucks[this.editingIndex!] = updatedTruck;
-        this.editingIndex = null;
-        this.orderForm.reset();
+    if (this.editingTruckId !== null) {
+      // Update existing truck
+      this.trucksService.updateTruck(this.editingTruckId, truckData).subscribe({
+        next: (updatedTruck) => {
+          const index = this.trucks.findIndex(truck => truck.id === this.editingTruckId);
+          if (index !== -1) {
+            this.trucks[index] = updatedTruck;
+          }
+          this.resetForm();
+        },
+        error: (err) => {
+          console.error('Error updating truck:', err);
+        }
       });
     } else {
-      this.trucksService.createTruck(truckData).subscribe((newTruck) => {
-        this.trucks.push(newTruck);
-        this.orderForm.reset();
+      // Create new truck
+      this.trucksService.createTruck(truckData).subscribe({
+        next: (newTruck) => {
+          this.trucks.push(newTruck);
+          this.resetForm();
+        },
+        error: (err) => {
+          console.error('Error creating truck:', err);
+        }
       });
     }
   }
 
-  editOrder(index: number) {
-    this.editingIndex = index;
-    this.orderForm.patchValue(this.trucks[index]);
+  // Edit a truck
+  editOrder(truck: Trucks) {
+    this.editingTruckId = truck.id;
+    this.orderForm.patchValue(truck);
   }
 
+  // Cancel editing
   cancelEdit() {
-    this.editingIndex = null;
-    this.orderForm.reset();
+    this.resetForm();
   }
 
-  deleteOrder(index: number) {
-    const truckId = this.trucks[index].id;
-    this.trucksService.deleteTruck(truckId).subscribe(() => {
-      this.trucks.splice(index, 1);
-      if (this.editingIndex === index) {
-        this.cancelEdit();
+  // Delete a truck
+  deleteOrder(truckId: number) {
+    this.trucksService.deleteTruck(truckId).subscribe({
+      next: () => {
+        this.trucks = this.trucks.filter(truck => truck.id !== truckId);
+        if (this.editingTruckId === truckId) {
+          this.resetForm();
+        }
+      },
+      error: (err) => {
+        console.error('Error deleting truck:', err);
       }
     });
+  }
+
+  // Reset form after submission or cancellation
+  private resetForm() {
+    this.editingTruckId = null;
+    this.selectedTruck = null;
+    this.orderForm.reset();
   }
 }

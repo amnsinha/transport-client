@@ -40,8 +40,8 @@
               <td><input type="checkbox" id="active" formControlName="active" /></td>
               <td><input type="date" id="nextMaintenanceDate" formControlName="nextMaintenanceDate" class="form-control" /></td>
               <td>
-                <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid">{{ editingIndex !== null ? 'Update' : 'Add' }}</button>
-                <button type="button" class="btn btn-secondary ml-2" *ngIf="editingIndex !== null" (click)="cancelEdit()">Cancel</button>
+                <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid">{{ editingTruckId !== null ? 'Update' : 'Add' }}</button>
+                <button type="button" class="btn btn-secondary ml-2" *ngIf="editingTruckId !== null" (click)="cancelEdit()">Cancel</button>
               </td>
             </tr>
           </tbody>
@@ -53,7 +53,7 @@
     <div class="truck-list">
       <table class="table table-bordered">
         <tbody>
-          <tr *ngFor="let truck of trucks; let i = index">
+          <tr *ngFor="let truck of trucks">
             <td>{{ truck.truckNumber }}</td>
             <td>{{ truck.registrationNumber }}</td>
             <td>{{ truck.model }}</td>
@@ -68,8 +68,8 @@
             <td>{{ truck.active ? 'Yes' : 'No' }}</td>
             <td>{{ truck.nextMaintenanceDate | date }}</td>
             <td>
-              <button type="button" class="btn btn-warning btn-sm" (click)="editOrder(i)">Edit</button>
-              <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteOrder(i)">Delete</button>
+              <button type="button" class="btn btn-warning btn-sm ml-2" (click)="editOrder(truck)">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteOrder(truck.id)">Delete</button>
             </td>
           </tr>
         </tbody>

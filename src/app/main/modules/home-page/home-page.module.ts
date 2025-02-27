@@ -16,11 +16,12 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddClientComponent } from "./add-client/addClient.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
 import {OrderComponent} from "./order/order.component";
+import { AddDriverComponent } from "./add-driver/addDriver.component";
 
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
-    , DashboardComponent,AddClientComponent,AddTruckComponent, OrderComponent],
+    , DashboardComponent,AddClientComponent,AddTruckComponent, OrderComponent,AddDriverComponent],
   exports: [
     HeaderComponent
   ],
