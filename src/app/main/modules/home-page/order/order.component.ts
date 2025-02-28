@@ -12,7 +12,7 @@ import { RouteLocation } from "../../../../models/RouteLocation";
 import { Driver } from "../../../../models/Driver";
 import { Order } from "../../../../models/Order";
 
-import { Observable } from 'rxjs'
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-order-form",
@@ -28,16 +28,15 @@ export class OrderComponent implements OnInit {
   drivers: Driver[] = [];
   orderId?: number | null;
   editingOrderId: number | null | undefined = null;
-  filteredParties: any[] = [];  // Store filtered parties based on input
-  filteredLocations: any[] = []; 
+  filteredParties: any[] = []; // Store filtered parties based on input
+  filteredLocations: any[] = [];
   filteredDestinations: any[] = [];
   filteredTrucks: any[] = [];
   showPartySuggestions: boolean = false;
   showLocationSuggestions: boolean = false;
   showDestinationSuggestions: boolean = false;
-  showTruckSuggestions: boolean = false;   // Flag to control visibility of suggestions
-  private debounceTimer: any;  // Timer for debounce delay when hiding suggestions
-
+  showTruckSuggestions: boolean = false; // Flag to control visibility of suggestions
+  private debounceTimer: any; // Timer for debounce delay when hiding suggestions
 
   constructor(
     private fb: FormBuilder,
@@ -84,87 +83,128 @@ export class OrderComponent implements OnInit {
 
   autoGenerateOrderId() {
     const timestamp = Date.now();
-    const randomString = Math.random().toString(36).substring(2, 8).toUpperCase();
+    const randomString = Math.random()
+      .toString(36)
+      .substring(2, 8)
+      .toUpperCase();
     this.orderForm.patchValue({ orderId: `ATC${randomString}${timestamp}` });
   }
   filterParties(event: Event) {
-    const input = event.target as HTMLInputElement;  // Cast the event target to an HTMLInputElement
-    const filterValue = input.value.toLowerCase();  // Access the value property safely
-    this.filteredParties = this.parties.filter(party =>
-      party.partyName.toLowerCase().includes(filterValue) ||
-      party.ownerNumber.toLowerCase().includes(filterValue)
+    const input = event.target as HTMLInputElement; // Cast the event target to an HTMLInputElement
+    const filterValue = input.value.toLowerCase(); // Get the input value and convert it to lowercase
+    // Filter parties based on partyName and ownerNumber
+    this.filteredParties = this.parties.filter(
+      (party) =>
+        party.partyName.toLowerCase().includes(filterValue) ||
+        party.ownerNumber.toLowerCase().includes(filterValue)
     );
+
+    // Show party suggestions when there is input
+    this.showPartySuggestions = filterValue.length > 0;
   }
 
-  // Select party from the dropdown
+  // Function to select a party from the list
   selectParty(party: any) {
-    this.orderForm.patchValue({ party: party.partyName });
-    this.showPartySuggestions = false;  // Hide suggestions after selection
+    this.orderForm.patchValue({ party: party.id }); // Set the form control with the selected party name
+    this.showPartySuggestions = false; // Hide suggestions after selection
   }
 
-  // Hide suggestions with a slight delay after the input loses focus
+  // Hide suggestions with a slight delay after input loses focus
   hideSuggestionsWithDelay() {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer);
     }
     this.debounceTimer = setTimeout(() => {
       this.showPartySuggestions = false;
-    }, 200);  // Delay time before hiding
+    }, 200); // Delay time before hiding
   }
 
   // Show suggestions when input is focused
   showSuggestionsOnFocus() {
     this.showPartySuggestions = true;
     this.showDestinationSuggestions = false;
+    this.showLocationSuggestions = false; // Hide the suggestions after selection
+  }
+
+  // Optionally, add a 'blur' event handler to clear suggestions when the user clicks outside
+  onBlur() {
+    this.showPartySuggestions = false;
+    this.showDestinationSuggestions = false;
+    this.showLocationSuggestions = false; 
+    this.showTruckSuggestions = false;// Hide the suggestions after selection
   }
 
   filterLocations(event: Event) {
-    const input = event.target as HTMLInputElement;  // Cast the event target to an HTMLInputElement
-    const filterValue = input.value.toLowerCase();  // Get the input value and convert it to lowercase
-    this.filteredLocations = this.routeLocations.filter(location =>
-      location.locationName.toLowerCase().includes(filterValue) // Filter locations by name
+    const input = event.target as HTMLInputElement; // Cast the event target to an HTMLInputElement
+    const filterValue = input.value.toLowerCase(); // Get the input value and convert it to lowercase
+    this.filteredLocations = this.routeLocations.filter(
+      (location) => location.locationName.toLowerCase().includes(filterValue) // Filter locations by name
     );
   }
   filterDestinations(event: Event) {
     const input = event.target as HTMLInputElement;
     const filterValue = input.value.toLowerCase();
-    this.filteredDestinations = this.routeLocations.filter(location =>
+    this.filteredDestinations = this.routeLocations.filter((location) =>
       location.locationName.toLowerCase().includes(filterValue)
     );
   }
   // Function to select a location from the list
   selectLocation(location: any) {
-    this.showLocationSuggestions = false;  // Hide the suggestions after selection
-    this.orderForm.patchValue({ location: location.locationName });  // Set the form control with the selected location
+    this.orderForm.patchValue({ origin: location.locationName }); // Set the form control with the selected location
+    this.showLocationSuggestions = false; // Hide the suggestions after selection
   }
   selectDestination(destination: any) {
+    this.orderForm.patchValue({ destination: destination.id });
     this.showDestinationSuggestions = false;
-    this.orderForm.patchValue({ destination: destination.locationName });
   }
-
+  getPartyName(): string {
+    const selectedPartyId = this.orderForm.value.party;
+    const selectedParty = this.parties.find((party) => party.id === selectedPartyId);
+    return selectedParty ? selectedParty.partyName : '';
+  }
+  getDestinationName(): string {
+    const selectedDestinationId = this.orderForm.value.destination;
+    const selectedDestination = this.routeLocations.find(
+      (location) => location.id === selectedDestinationId
+    );
+    return selectedDestination ? selectedDestination.locationName : '';
+  }
+  getTruckName(): string {
+    const selectedTruckId = this.orderForm.value.assignedTruck;
+    const selectedTruck = this.trucks.find((truck) => truck.id === selectedTruckId);
+    return selectedTruck ? selectedTruck.truckNumber : '';
+  }
   filterTrucks(event: Event) {
     const input = event.target as HTMLInputElement;
     const filterValue = input.value.toLowerCase();
-    this.filteredTrucks = this.trucks.filter(truck =>
+    this.filteredTrucks = this.trucks.filter((truck) =>
       truck.truckNumber.toLowerCase().includes(filterValue)
     );
   }
-  
+
   // Function to select a truck from the list
   selectTruck(truck: any) {
+    this.orderForm.patchValue({ assignedTruck: truck.id });
     this.showTruckSuggestions = false;
-    this.orderForm.patchValue({ assignedTruck: truck.truckNumber });
   }
-  
+
   loadData() {
-    this.orderService.getAllOrders().subscribe((orders) => (this.orders = orders));
+    this.orderService
+      .getAllOrders()
+      .subscribe((orders) => (this.orders = orders));
     this.partyService.getAllParties().subscribe((parties) => {
       this.parties = parties;
-      this.filteredParties = this.parties;  // Initially, show all parties
+      this.filteredParties = this.parties; // Initially, show all parties
     });
-    this.trucksService.getAllTrucks().subscribe((trucks) => (this.trucks = trucks));
-    this.driverService.getAllDrivers().subscribe((drivers) => (this.drivers = drivers));
-    this.routeLocationService.getAllRouteLocations().subscribe((locations) => (this.routeLocations = locations));
+    this.trucksService
+      .getAllTrucks()
+      .subscribe((trucks) => (this.trucks = trucks));
+    this.driverService
+      .getAllDrivers()
+      .subscribe((drivers) => (this.drivers = drivers));
+    this.routeLocationService
+      .getAllRouteLocations()
+      .subscribe((locations) => (this.routeLocations = locations));
   }
 
   loadOrderById(orderId: number) {
@@ -199,14 +239,19 @@ export class OrderComponent implements OnInit {
   submitOrder() {
     if (this.orderForm.valid) {
       const orderPayload: any = {
-  
         orderId: this.orderForm.value.orderId,
         party: { id: Number(this.orderForm.value.party) } as Party,
         origin: { id: Number(this.orderForm.value.origin) } as RouteLocation,
-        destination: { id: Number(this.orderForm.value.destination) } as RouteLocation,
+        destination: {
+          id: Number(this.orderForm.value.destination),
+        } as RouteLocation,
         freightWeight: Number(this.orderForm.value.freightWeight),
-        assignedTruck: { id: Number(this.orderForm.value.assignedTruck) } as Trucks,
-        assignedDriver: { id: Number(this.orderForm.value.assignedDriver) } as Driver,
+        assignedTruck: {
+          id: Number(this.orderForm.value.assignedTruck),
+        } as Trucks,
+        assignedDriver: {
+          id: Number(this.orderForm.value.assignedDriver),
+        } as Driver,
         status: this.orderForm.value.status,
         commissionAmount: this.orderForm.value.commissionAmount,
         approvedBy: this.orderForm.value.approvedBy,
@@ -215,16 +260,29 @@ export class OrderComponent implements OnInit {
       };
 
       if (this.orderId) {
+        // Update the order locally
+        const updatedOrder = { ...orderPayload, id: this.orderId };
+        
+        // Find the index of the order in the orders array
+        const index = this.orders.findIndex((order) => order.id === this.orderId);
+        
+        if (index !== -1) {
+          // Replace the updated order in the orders array
+          this.orders[index] = updatedOrder;
+        }
+  
         this.orderService.updateOrder(this.orderId, orderPayload).subscribe(
           () => {
+            // Optionally navigate to another page or just confirm the update
             this.router.navigate(["/orders"]);
           },
           (error) => console.error("Error updating order:", error)
         );
       } else {
+        // Create a new order and add it to the local orders list
         this.orderService.createOrder(orderPayload).subscribe(
-          () => {
-            this.loadData();
+          (newOrder) => {
+            this.orders.push(newOrder); // Add the new order to the local array
             this.resetForm();
             this.router.navigate(["/orders"]);
           },
@@ -238,7 +296,7 @@ export class OrderComponent implements OnInit {
 
   editOrder(order: Order) {
     this.editingOrderId = order.id;
-       this.orderForm.patchValue({
+    this.orderForm.patchValue({
       orderId: order.orderId,
       party: order.party.id,
       origin: order.origin.id,
@@ -261,7 +319,7 @@ export class OrderComponent implements OnInit {
   deleteOrder(orderId: number) {
     this.orderService.deleteOrder(orderId).subscribe(
       () => {
-        this.orders = this.orders.filter(order => order.id !== orderId);
+        this.orders = this.orders.filter((order) => order.id !== orderId);
         this.resetForm();
       },
       (error) => console.error("Error deleting order:", error)

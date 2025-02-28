@@ -109,23 +109,33 @@ label {
 .order-table tr:hover {
   background-color: #f1f1f1;
 }
+/* Ensure the parent container is positioned relatively */
+td {
+  position: relative;
+}
+
+/* Style the dropdown list */
 .autocomplete-list {
   position: absolute;
-  background: white;
+  top: 100%;  /* Position the list just below the input field */
+  left: 0;    /* Align the left side of the list with the input */
+  right: 0;   /* Optional: Ensure it stretches across the width of the input */
+  background-color: white;
   border: 1px solid #ccc;
-  max-height: 150px;
-  overflow-y: auto;
-  list-style: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds some shadow for better visibility */
+  max-height: 400px; /* Optional: To limit the height of the suggestions */
+  overflow-y: auto;  /* Optional: To allow scrolling if there are too many items */
+  z-index: 1000;     /* Ensure the dropdown is above other content */
   padding: 0;
   margin: 0;
-  width: 100%;
+  list-style: none;  /* Remove default list styling */
 }
 
 .autocomplete-list li {
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
 }
 
 .autocomplete-list li:hover {
-  background: #f1f1f1;
+  background-color: #f0f0f0; /* Optional: Highlight item on hover */
 }

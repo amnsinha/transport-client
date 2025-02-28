@@ -31,6 +31,7 @@
               (focus)="showPartySuggestions = true" 
               (blur)="hideSuggestionsWithDelay()" 
               placeholder="Party..."
+              [value]="getPartyName()"
             >
             
             <ul *ngIf="filteredParties.length && showPartySuggestions" class="autocomplete-list">
@@ -73,6 +74,7 @@
               (focus)="showDestinationSuggestions = true" 
               (blur)="hideSuggestionsWithDelay()" 
               placeholder="Destination"
+              [value]="getDestinationName()"
             >
             
             <ul *ngIf="filteredDestinations.length && showDestinationSuggestions" class="autocomplete-list">
@@ -97,6 +99,7 @@
               (focus)="showTruckSuggestions = true" 
               (blur)="hideSuggestionsWithDelay()"
               placeholder="Search Truck"
+              [value]="getTruckName()"
             >
             
             <ul *ngIf="filteredTrucks.length && showTruckSuggestions" class="autocomplete-list">

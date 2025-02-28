@@ -52,6 +52,24 @@
     <!-- List of Added Trucks -->
     <div class="truck-list">
       <table class="table table-bordered">
+        <thead>
+        <tr style="font-size: 11px; font-weight: bold; background-color: #f8f9fa;">
+          <th>Truck Number</th>
+          <th>Registration Number</th>
+          <th>Model</th>
+          <th>Capacity</th>
+          <th>Fuel Type</th>
+          <th>Status</th>
+          <th>Owner Number</th>
+          <th>Owner Name</th>
+          <th>Driver Name</th>
+          <th>Driver Number</th>
+          <th>Freight</th>
+          <th>Active</th>
+          <th>Maintenance Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
         <tbody>
           <tr *ngFor="let truck of trucks">
             <td>{{ truck.truckNumber }}</td>
