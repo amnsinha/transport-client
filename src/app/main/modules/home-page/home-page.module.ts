@@ -17,7 +17,10 @@ import { AddClientComponent } from "./add-client/addClient.component";
 import { AddTruckComponent } from "./add-truck/addTruck.component";
 import {OrderComponent} from "./order/order.component";
 import { AddDriverComponent } from "./add-driver/addDriver.component";
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatOptionModule } from '@angular/material/core'; // Required for mat-option
 
 @NgModule({
   declarations: [HomePageComponent, HeaderComponent
@@ -44,6 +47,10 @@ import { AddDriverComponent } from "./add-driver/addDriver.component";
     DropdownModule, // For dropdown
     CardModule, // For cards
     InputTextModule, // For input text fields
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatOptionModule, // Add this module
 
 
   ]

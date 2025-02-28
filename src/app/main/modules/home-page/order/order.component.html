@@ -23,28 +23,92 @@
             <input type="text" formControlName="orderId" class="form-control" readonly>
           </td>
           <td>
-            <select formControlName="party" class="form-control">
-              <option *ngFor="let party of parties" [value]="party.id">{{ party.partyName }}</option>
-            </select>
+            <input 
+              type="text" 
+              formControlName="party" 
+              class="form-control" 
+              (input)="filterParties($event)" 
+              (focus)="showPartySuggestions = true" 
+              (blur)="hideSuggestionsWithDelay()" 
+              placeholder="Party..."
+            >
+            
+            <ul *ngIf="filteredParties.length && showPartySuggestions" class="autocomplete-list">
+              <li 
+                *ngFor="let party of filteredParties" 
+                (click)="selectParty(party)"
+              >
+                {{ party.partyName }} {{ party.ownerNumber }}
+              </li>
+            </ul>
           </td>
+                    
           <td>
-            <select formControlName="origin" class="form-control">
-              <option *ngFor="let location of routeLocations" [value]="location.id">{{ location.locationName }}</option>
-            </select>
-          </td>
+            <input 
+              type="text" 
+              formControlName="location" 
+              class="form-control" 
+              (input)="filterLocations($event)" 
+              (focus)="showLocationSuggestions = true" 
+              (blur)="hideSuggestionsWithDelay()" 
+              placeholder="Origin"
+            >
+            
+            <ul *ngIf="filteredLocations.length && showLocationSuggestions" class="autocomplete-list">
+              <li 
+                *ngFor="let location of filteredLocations" 
+                (click)="selectLocation(location)"
+              >
+                {{ location.locationName }}
+              </li>
+            </ul>
+          </td>          
+          
           <td>
-            <select formControlName="destination" class="form-control">
-              <option *ngFor="let location of routeLocations" [value]="location.id">{{ location.locationName }}</option>
-            </select>
+            <input 
+              type="text" 
+              formControlName="destination" 
+              class="form-control" 
+              (input)="filterDestinations($event)" 
+              (focus)="showDestinationSuggestions = true" 
+              (blur)="hideSuggestionsWithDelay()" 
+              placeholder="Destination"
+            >
+            
+            <ul *ngIf="filteredDestinations.length && showDestinationSuggestions" class="autocomplete-list">
+              <li 
+                *ngFor="let destination of filteredDestinations" 
+                (click)="selectDestination(destination)"
+              >
+                {{ destination.locationName }}
+              </li>
+            </ul>
           </td>
+                   
           <td>
             <input type="number" formControlName="freightWeight" class="form-control">
           </td>
           <td>
-            <select formControlName="assignedTruck" class="form-control">
-              <option *ngFor="let truck of trucks" [value]="truck.id">{{ truck.truckNumber }}</option>
-            </select>
+            <input 
+              type="text" 
+              formControlName="assignedTruck" 
+              class="form-control" 
+              (input)="filterTrucks($event)" 
+              (focus)="showTruckSuggestions = true" 
+              (blur)="hideSuggestionsWithDelay()"
+              placeholder="Search Truck"
+            >
+            
+            <ul *ngIf="filteredTrucks.length && showTruckSuggestions" class="autocomplete-list">
+              <li 
+                *ngFor="let truck of filteredTrucks" 
+                (click)="selectTruck(truck)"
+              >
+                {{ truck.truckNumber }}
+              </li>
+            </ul>
           </td>
+          
           <td>
             <select formControlName="assignedDriver" class="form-control">
               <option *ngFor="let driver of drivers" [value]="driver.id">{{ driver.driverName }}</option>
@@ -76,7 +140,6 @@
       </tbody>
     </table>
     <button type="submit" class="btn btn-primary btn-sm">{{ orderId ? 'Update Order' : 'Add Order' }}</button>
-    <button *ngIf="orderId" type="button" class="btn btn-danger btn-sm" (click)="deleteOrder()">Delete Order</button>
   </form>
 </div>
 
@@ -115,8 +178,8 @@
         <td>{{ order.clearance }}</td>
         <td>{{ order.incharge }}</td>
         <td>
-          <button class="btn btn-warning btn-sm" (click)="loadOrder()">Edit</button>
-          <button class="btn btn-danger btn-sm" (click)="deleteOrder()">Delete</button>
+          <button class="btn btn-warning btn-sm" (click)="loadOrderById(order.id)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteOrder(order.id)">Delete</button>
         </td>
       </tr>
     </tbody>

@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = `${environment.apiBaseUrl}/api/orders`;
+  private apiUrl = `${environment.apiBaseUrl}/api/order`;
   constructor(private http: HttpClient) {}
 
   getAllOrders(): Observable<Order[]> {

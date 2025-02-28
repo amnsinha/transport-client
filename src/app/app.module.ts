@@ -9,11 +9,12 @@ import {HttpClientModule} from "@angular/common/http";
 import {HomePageModule} from "./main/modules/home-page/home-page.module";
 import {ToastMessageService} from "./shared/services/toast-message.service";
 import {MessageService} from "primeng/api";
-
-
 import { ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core'; // Required for mat-option
 
 
 @NgModule({
@@ -29,7 +30,11 @@ import {CommonModule} from "@angular/common";
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatOptionModule
   ],
   providers: [ToastMessageService, MessageService],
   bootstrap: [AppComponent]
