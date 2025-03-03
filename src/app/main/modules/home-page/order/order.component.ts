@@ -179,7 +179,7 @@ export class OrderComponent implements OnInit {
       ? selectedParty.partyName || selectedParty.ownerNumber
       : "";
   }
-  getOriginName() {
+  getOriginName() : string {
     const selectedOriginId = this.orderForm.value.origin;
     const selectedOrigin = this.routeLocations.find(
       (origin) => origin.id === selectedOriginId
